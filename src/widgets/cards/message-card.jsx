@@ -1,44 +1,156 @@
 import PropTypes from "prop-types";
-import { Avatar, Typography } from "@material-tailwind/react";
+import { Button, IconButton, Avatar, Typography } from "@material-tailwind/react";
+import React from "react";
+import ReactDOM from 'react-dom/client';
+import { Contract } from "@/widgets/contract";
 
-export function MessageCard({ img, name, message, action }) {
-  return (
-    <div className="flex items-center justify-between gap-4">
-      <div className="flex items-center gap-4">
-        <Avatar
-          src={img}
-          alt={name}
-          className="shadow-lg shadow-blue-gray-500/25"
-        />
-        <div>
-          <Typography
-            variant="small"
-            color="blue-gray"
-            className="mb-1 font-semibold"
-          >
-            {name}
-          </Typography>
-          <Typography className="text-xs font-normal text-blue-gray-400">
-            {message}
-          </Typography>
+export class MessageCard extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      name: null,
+      energyRequire: 0,
+      chooseElements: {},
+      optionalElements: {
+        brownMachine: 0,
+        whiteMachine: 1,
+        mixMachine: 1,
+        purpleMachine: 1,
+        vp: 1,
+        money: 5,
+        // energyPro: 3,
+        water: 2,
+        waterDrop: 3,
+        base: 1,
+        elevator: 2,
+        conduit: 1,
+        powerplant: 1,
+
+      },
+    }
+  }
+
+  handleClick(elementKey) {
+    let eList = this.state.chooseElements;
+    if (eList.hasOwnProperty(elementKey)) {
+      eList[elementKey] = eList[elementKey] + 1;
+    } else {
+      if (Object.keys(eList).length === 3) alert("Can only have 3 elements!");
+      else eList[elementKey] = 1;
+    }
+    this.setState({chooseElements: eList});
+  }
+
+  reset() {
+    this.setState({energyRequire: 0, chooseElements: {}});
+  }
+
+  handleEnergy() {
+    this.setState({energyRequire: this.state.energyRequire + 1});
+  }
+  render() {
+    return (
+      <div className="flex flex-col items-center">
+        <div className="flex items-center scale-100">
+          <Contract name="G1" energyRequire={this.state.energyRequire} benefits={this.state.chooseElements} />
+        </div>
+        <br/><br/>
+        <div className="flex items-center gap-8">
+          <Button color="purple" onClick={() => this.handleEnergy()}>Energy</Button>
+          <Button onClick={() => this.reset()}>Reset</Button>
+        </div>
+        <br/>
+        <div className="flex items-center">
+          <ElementList optionalElements={this.state.optionalElements} onClick={(i) => this.handleClick(i)} />
         </div>
       </div>
-      {action}
-    </div>
   );
+  }
+}
+// class MessageCard extends React.Component {
+//
+// }
+
+class ElementList extends React.Component { // 所有元素
+  renderElement(elementKey, elementValue) {
+    return ( // TODO 处理每个单独的unit
+      <ElementUnit
+        key={elementKey}
+        name={elementKey}
+        count={elementValue}
+        onClick={() => this.props.onClick(elementKey)}
+        // onClick={() => this.props.onClick(i)}
+      />
+    );
+  }
+
+  render() {
+    let elementList = this.props.optionalElements;
+    const elementKeys = Object.keys(elementList);
+    return (
+      <div className="grid grid-cols-4 gap-4">
+      {elementKeys.map((elementKey) => {
+        console.log(elementKey);
+        return this.renderElement(elementKey, elementList[elementKey]); // TODO 加上div class，这是一个列表
+        // return (<ElementUnit
+        //   key={elementKey}
+        //   name={elementKey}
+        //   onClick={() => this.props.onClick(elementKey)}
+        // />)
+      })}
+      </div>
+      // <div className="grid grid-cols-4 gap-4"><ElementUnit name="brownMachine"  onClick={() => this.props.onClick("brownMachine")}/><ElementUnit name="money" onClick={() => this.props.onClick("money")}/></div>
+    )
+  }
 }
 
-MessageCard.defaultProps = {
-  action: null,
-};
+// const Button = (props) => {
+//   return (
+//     <button onClick={() =>
+//       props.sign == "+" ? props.updateCount(1) : props.updateCount(-1)}>
+//       {props.sign}
+//     </button>
+//
+//   );
+// }
 
-MessageCard.propTypes = {
-  img: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  message: PropTypes.node.isRequired,
-  action: PropTypes.node,
-};
-
-MessageCard.displayName = "/src/widgets/cards/message-card.jsx";
+class ElementUnit extends React.Component { // 生成元素+数字输入框
+  render() {
+    const cName = "scale-100 hover:bg-sky-700 " + this.props.name; // TODO 样式调整
+    return (
+      // <button className={cName} onClick={this.props.onClick}></button>
+      <IconButton size="lg"><div className={cName} onClick={this.props.onClick}></div></IconButton>
+    )
+  }
+}
 
 export default MessageCard;
+// class ElementUnit extends React.Component { // 生成元素+数字输入框
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       count: 1
+//     }
+//
+//   }
+//
+//   handleCount(value) {
+//     this.setState((prevState) => ({ count: prevState.count + value }));
+//   }
+//
+//   render() {
+//     return (
+//       <div>
+//         <div className={name}></div>
+//         Current count: {this.state.count}
+//         <hr />
+//         <Button sign="+" count={this.state.count} updateCount={this.handleCount.bind(this)} />
+//         <Button sign="-" count={this.state.count} updateCount={this.handleCount.bind(this)} />
+//       </div>
+//     );
+//   }
+// }
+
+
+
+

@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
+import CreateInterface from "./pages/dashboard/create.jsx";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -40,6 +41,12 @@ export const routes = [
         name: "notifactions",
         path: "/notifactions",
         element: <Notifications />,
+      },
+      {
+        icon: <BellIcon {...icon} />,
+        name: "create",
+        path: "/create",
+        element: <CreateInterface />,
       },
     ],
   },
