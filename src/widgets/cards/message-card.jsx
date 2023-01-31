@@ -1,12 +1,15 @@
 import PropTypes from "prop-types";
 import { Button, IconButton, Avatar, Typography } from "@material-tailwind/react";
-import React from "react";
+import React, { useCallback, useRef } from "react";
 import ReactDOM from 'react-dom/client';
 import { Contract } from "@/widgets/contract";
+import { toPng, toJpeg } from 'html-to-image';
+import '../../../public/css/test.css'
 
 export class MessageCard extends React.Component {
   constructor(props){
     super(props);
+    // this.getRefsFromChild = this.getRefsFromChild.bind(this);
     this.state = {
       name: null,
       energyRequire: 0,
@@ -30,6 +33,14 @@ export class MessageCard extends React.Component {
     }
   }
 
+  // getRefsFromChild(childRefs) {
+  //   // you can get your requested value here, you can either use state/props/ or whatever you like based on your need case by case
+  //   this.setState({
+  //     myRequestedRefs: childRefs
+  //   });
+  //   console.log("myRequestedRefs",this.state.myRequestedRefs); // this should have *info*, *contact* as keys
+  // }
+
   handleClick(elementKey) {
     let eList = this.state.chooseElements;
     if (eList.hasOwnProperty(elementKey)) {
@@ -48,16 +59,46 @@ export class MessageCard extends React.Component {
   handleEnergy() {
     this.setState({energyRequire: this.state.energyRequire + 1});
   }
+
+  async downloadImg() {
+    // const downloadImage = async () => {
+    console.log(document.getElementById("domEl"));
+      const dataUrl = await toPng(document.getElementById("domEl"));
+    // const dataUrl = await toJpeg(document.getElementById("domEl"),  { quality: 0.95 });
+
+    // download image
+      const link = document.createElement('a');
+      link.download = "contract.png";
+      link.href = dataUrl;
+      link.click();
+    // }
+  }
+
   render() {
+    //
+    // const downloadImage = async () => {
+    //   const dataUrl = await toPng(domEl.current);
+    //   console.log(dataUrl);
+    //
+    //   // download image
+    //   const link = document.createElement('a');
+    //   link.download = "html-to-img.png";
+    //   link.href = dataUrl;
+    //   link.click();
+    // }
+
     return (
       <div className="flex flex-col items-center">
-        <div className="flex items-center scale-100">
-          <Contract name="G1" energyRequire={this.state.energyRequire} benefits={this.state.chooseElements} />
+        <div id="domEl" className="flex items-center scale-100">
+        {/*<div id = "domEl" className="flex items-center scale-100">*/}
+        {/*    <Contract id ="domEl" name="G1" passRefUpward={this.getRefsFromChild} energyRequire={this.state.energyRequire} benefits={this.state.chooseElements} />*/}
+          <Contract id ="domEl" energyRequire={this.state.energyRequire} benefits={this.state.chooseElements} />
         </div>
         <br/><br/>
         <div className="flex items-center gap-8">
           <Button color="purple" onClick={() => this.handleEnergy()}>Energy</Button>
           <Button onClick={() => this.reset()}>Reset</Button>
+          <Button onClick={() => this.downloadImg()}>Download</Button>
         </div>
         <br/>
         <div className="flex items-center">
@@ -90,7 +131,6 @@ class ElementList extends React.Component { // 所有元素
     return (
       <div className="grid grid-cols-4 gap-4">
       {elementKeys.map((elementKey) => {
-        console.log(elementKey);
         return this.renderElement(elementKey, elementList[elementKey]); // TODO 加上div class，这是一个列表
         // return (<ElementUnit
         //   key={elementKey}

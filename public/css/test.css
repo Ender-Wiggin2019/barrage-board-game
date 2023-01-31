@@ -10,12 +10,17 @@ a {
 .contract {
     display: block;
     content: "";
-    width: 56px;
+    width: 90px;
+    height: 65px;
     /*position: absolute;*/
-    transform: scale(2);
-    background-size: 56px, 80px;
+    /*transform: scale(2);*/
+    /*background-size: 65px, 90px;*/
+    background-size: contain;
+    /*border-bottom-color: black;*/
+    /*border-width: 1px;*/
     margin: 10px;
     background-repeat: no-repeat;
+
 }
 
 .green {background-image: url(../img/contract-green.png);}
@@ -24,95 +29,108 @@ a {
 .purple {background-image: url(../img/contract-purple.png);}
 
 .contract-number {
-    text-align: center;
+    text-align: left;
     color: #bb3f90;
     font-family: Arial;
     font-weight: bold;
-    margin-left: -30px;
-    margin-top:8px;
-    margin-bottom: 2px;
+    padding-left: 11px;
+    padding-top: 15px;
+    /*margin-left: 30px;*/
+    /*margin-top:30px;*/
+    /*margin-bottom: 2px;*/
+    /*border-width: 1px;*/
+
     /*margin-left: 20px;*/
     /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
     text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
     filter: drop-shadow(0 0 2px white);
-    font-size: 20px;
+    font-size: 26px;
 }
 
 .contract-top {
     position: absolute;
-    margin-left: 18px;
-    margin-top: -42px;
+    margin-left: 47px;
+    margin-top: -44px;
+    /*border-width: 5px;*/
+
 }
 
 .contract-middle {
     position: absolute;
-    margin-left: 17px;
-    margin-top: -35px;
+    margin-left: 47px;
+    margin-top: -33px;
 }
 
 .contract-bottom {
     position: absolute;
-    margin-left: 18px;
-    margin-top: -28px;
+    margin-left: 47px;
+    margin-top: -20px;
 }
 
 .contract-bottom-left {
     position: absolute;
-    margin-left: 12px;
-    margin-top: -30px;
+    margin-left: 38px;
+    margin-top: -20px;
 }
 
 .contract-bottom-right {
     position: absolute;
-    margin-left: 23px;
-    margin-top: -30px;
+    margin-left: 56px;
+    margin-top: -20px;
 }
 
 .conduit {
     display: inline-block;
     background-image: url(../img/conduit.png);
-    width: 40px;
-    height: 40px;
-    background-size: 40px 40px;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+    /*border-width: 5px;*/
+
     /*vertical-align: middle;*/
     /*margin-bottom: 5px;*/
-    transform: scale(0.3);
+    /*transform: scale(0.3);*/
 }
 
 .conduit-number {
     text-align: left;
     color: #bb3f90;
-    font-family: Arial;
+    /*font-family: Arial;*/
     font-weight: bold;
-    margin-left: 5px;
-    margin-top:0px;
-    margin-bottom: 2px;
+    margin-left: 4px;
+    /*margin-top:0px;*/
+    /*margin-bottom: 2px;*/
     /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
     text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
-    filter: drop-shadow(0 0 2px white);
+    /*filter: drop-shadow(0 0 2px white);*/
     /*letter-spacing: 4px;*/
-    font-size: 18px;
+    font-size: 7px;
 }
 
 .base {
     display: inline-block;
     background-image: url(../img/base.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 50px;
-    background-size: 40px;
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: contain;
+    /*border-width: 2px;*/
     /*vertical-align: middle;*/
-    transform: scale(0.4);
+    /*transform: scale(0.4);*/
 }
 
 .location {
     display: inline-block;
     background-repeat: no-repeat;
-    width: 40px;
-    height: 46px;
-    background-size: 40px;
-    /*vertical-align: middle;*/
-    transform: scale(0.3);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    bottom: 20px;
+    background-size: 80% 80%;
 }
 
 .plain {
@@ -135,24 +153,20 @@ a {
     display: inline-block;
     background-image: url(../img/elevator.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 50px;
-    background-size: 40px;
-    /*vertical-align: middle;*/
-    /*margin-bottom: 5px;*/
-    transform: scale(0.4);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: contain;
 }
 
 .powerplant {
     display: inline-block;
     background-image: url(../img/powerplant.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 50px;
-    background-size: 40px;
-    /*vertical-align: middle;*/
-    /*margin-bottom: 5px;*/
-    transform: scale(0.4);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: contain;
 }
 
 .vp {
@@ -161,16 +175,15 @@ a {
     color: #fff;
     font-family: Arial;
     font-weight: bold;
-    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
-    filter: drop-shadow(0 0 2px white);
-    font-size: 30px;
-    line-height: 30px;
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    font-size: 14px;
+    line-height: 29px;
     background-image: url(../img/vp.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 43px;
-    background-size: 40px;
-    transform: scale(0.25);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 70% auto;
 }
 
 .money {
@@ -179,34 +192,35 @@ a {
     color: #fff;
     font-family: Arial;
     font-weight: bold;
-    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
-    filter: drop-shadow(0 0 2px white);
-    font-size: 30px;
-    line-height: 40px;
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    font-size: 14px;
+    line-height: 28px;
     background-image: url(../img/resource-money.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    background-size: 40px;
-    transform: scale(0.25);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 70% auto;
 }
 
 .rotate {
     display: inline-block;
     text-align: right;
+    padding-top: 3px;
+    padding-right: 5px;
     color: #fff;
     font-family: Arial;
     font-weight: bold;
-    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
-    filter: drop-shadow(0 0 2px white);
-    font-size: 30px;
-    line-height: 30px;
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    /*filter: drop-shadow(0 0 2px white);*/
+    font-size: 10px;
+    line-height: 14px;
     background-image: url(../img/rotate.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    background-size: 40px;
-    transform: scale(0.2);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 60% auto;
 }
 
 .brownMachine {
@@ -215,16 +229,15 @@ a {
     color: #fff;
     font-family: Arial;
     font-weight: bold;
-    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
-    filter: drop-shadow(0 0 2px white);
-    font-size: 27px;
-    line-height: 40px;
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    font-size: 10px;
+    line-height: 28px;
     background-image: url(../img/resource-brown.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    background-size: 40px;
-    transform: scale(0.25);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 60% auto;
 }
 
 .whiteMachine {
@@ -233,16 +246,15 @@ a {
     color: #fff;
     font-family: Arial;
     font-weight: bold;
-    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
-    filter: drop-shadow(0 0 2px white);
-    font-size: 27px;
-    line-height: 40px;
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    font-size: 10px;
+    line-height: 28px;
     background-image: url(../img/resource-white.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    background-size: 40px;
-    transform: scale(0.25);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 60% auto;
 }
 
 .mixMachine {
@@ -251,16 +263,15 @@ a {
     color: #fff;
     font-family: Arial;
     font-weight: bold;
-    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
-    filter: drop-shadow(0 0 2px white);
-    font-size: 27px;
-    line-height: 40px;
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    font-size: 10px;
+    line-height: 28px;
     background-image: url(../img/resource-mix.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    background-size: 40px;
-    transform: scale(0.25);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 60% auto;
 }
 
 .purpleMachine {
@@ -269,16 +280,15 @@ a {
     color: #fff;
     font-family: Arial;
     font-weight: bold;
-    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
-    filter: drop-shadow(0 0 2px white);
-    font-size: 27px;
-    line-height: 40px;
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    font-size: 10px;
+    line-height: 28px;
     background-image: url(../img/resource-purple.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    background-size: 40px;
-    transform: scale(0.25);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 60% auto;
 }
 
 .water {
@@ -287,16 +297,15 @@ a {
     color: #fff;
     font-family: Arial;
     font-weight: bold;
-    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
-    filter: drop-shadow(0 0 2px white);
-    font-size: 27px;
-    line-height: 40px;
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    font-size: 10px;
+    line-height: 29px;
     background-image: url(../img/water.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    background-size: 40px;
-    transform: scale(0.25);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 65% auto;
 }
 
 .waterDrop {
@@ -305,44 +314,44 @@ a {
     color: #fff;
     font-family: Arial;
     font-weight: bold;
-    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
-    filter: drop-shadow(0 0 2px white);
-    font-size: 20px;
-    line-height: 33px;
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    font-size: 8px;
+    line-height: 24px;
     background-image: url(../img/water-drop.png);
     background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    background-size: 40px;
-    transform: scale(0.28);
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 72% auto;
 }
 
 .energyPro {
     display: inline-block;
-    text-align: left;
+    text-align: center;
     color: #bb3f90;
     font-family: Arial;
-    font-weight: bold;
+    padding-right: 3px;
+    /*font-weight: bold;*/
     /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
-    text-shadow: #000 2px 0 0, #000 0 2px 0, #000 -2px 0 0, #000 0 -2px 0;
-    filter: drop-shadow(0 0 2px white);
-    font-size: 50px;
-    line-height: 40px;
-    /*background-image: url(../img/arrow-right.png);*/
-    /*background-repeat: no-repeat;*/
-    width: 40px;
-    height: 40px;
-    /*background-size: 40px;*/
-    transform: scale(0.18);
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    /*filter: drop-shadow(0 0 2px white);*/
+    font-size: 17px;
+    line-height: 28px;
+    background-repeat: no-repeat;
+    background-position: 13px center;
+    width: 28px;
+    height: 28px;
+    background-size: 45% auto;
+    background-image: url(../img/arrow-right.png);
 }
 
 .icon-right-arrow {
-    background-image: url(../img/arrow-right.png);
-    background-repeat: no-repeat;
-    width: 46px;
-    height: 40px;
-    background-size: 40px;
-    transform: scale(0.15);
+    /*background-image: url(../img/arrow-right.png);*/
+    /*background-repeat: no-repeat;*/
+    /*width: 46px;*/
+    /*height: 40px;*/
+    /*background-size: 40px;*/
+    /*transform: scale(0.15);*/
 }
 
 input[type='number']::-webkit-inner-spin-button,
