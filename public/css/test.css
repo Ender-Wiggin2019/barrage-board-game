@@ -29,11 +29,11 @@ a {
 .purple {background-image: url(../img/contract-purple.png);}
 
 .contract-number {
-    text-align: left;
+    text-align: center;
     color: #bb3f90;
     font-family: Arial;
     font-weight: bold;
-    padding-left: 11px;
+    padding-right: 50px;
     padding-top: 15px;
     /*margin-left: 30px;*/
     /*margin-top:30px;*/
@@ -50,7 +50,7 @@ a {
 .contract-top {
     position: absolute;
     margin-left: 47px;
-    margin-top: -44px;
+    margin-top: -40px;
     /*border-width: 5px;*/
 
 }
@@ -64,7 +64,7 @@ a {
 .contract-bottom {
     position: absolute;
     margin-left: 47px;
-    margin-top: -20px;
+    margin-top: -18px;
 }
 
 .contract-bottom-left {
@@ -95,19 +95,35 @@ a {
     /*transform: scale(0.3);*/
 }
 
+/*.conduit-number {*/
+/*    text-align: left;*/
+/*    color: #bb3f90;*/
+/*    !*font-family: Arial;*!*/
+/*    font-weight: bold;*/
+/*    margin-left: 5px;*/
+/*    !*margin-top:0px;*!*/
+/*    !*margin-bottom: 2px;*!*/
+/*    !*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*!*/
+/*    !*text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;*!*/
+/*    !*filter: drop-shadow(0 0 2px white);*!*/
+/*    !*letter-spacing: 4px;*!*/
+/*    font-size: 7px;*/
+/*    !*transform: scale(0.3);*!*/
+/*}*/
 .conduit-number {
     text-align: left;
     color: #bb3f90;
     /*font-family: Arial;*/
     font-weight: bold;
-    margin-left: 4px;
+    margin-left: -4px;
     /*margin-top:0px;*/
-    /*margin-bottom: 2px;*/
+    margin-top: -10px;
     /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
     text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
     /*filter: drop-shadow(0 0 2px white);*/
     /*letter-spacing: 4px;*/
-    font-size: 7px;
+    font-size: 24px;
+    transform: scale(0.45);
 }
 
 .base {
@@ -330,18 +346,18 @@ a {
     text-align: center;
     color: #bb3f90;
     font-family: Arial;
-    padding-right: 3px;
+    padding-right: 5px;
     /*font-weight: bold;*/
     /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
     text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
     /*filter: drop-shadow(0 0 2px white);*/
-    font-size: 17px;
+    font-size: 15px;
     line-height: 28px;
     background-repeat: no-repeat;
-    background-position: 13px center;
+    background-position: 12px center;
     width: 28px;
     height: 28px;
-    background-size: 45% auto;
+    background-size: 40% auto;
     background-image: url(../img/arrow-right.png);
 }
 
