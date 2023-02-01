@@ -8,6 +8,7 @@ import { Element } from "./element.jsx"
 
 export class ExternalWork extends React.Component {
 
+  // TODO 在renderBenefits中处理建筑的摆放问题
   renderMachine() {
     let displayId = 0;
     const machineRequireNumber = Object.keys(this.props.machineRequire).length;
