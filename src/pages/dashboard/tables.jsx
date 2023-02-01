@@ -14,18 +14,19 @@ import { Contract } from "@/widgets/contract";
 
 export function Tables() {
   return (
-    <div className="mt-12 mb-8 flex flex-col gap-12">
+    <div className="mt-8 mb-8 flex flex-col gap-10">
       {Object.keys(contractData).map(
         (contractType) => {
+          const gridStyle = contractData[contractType].contractType === "National Contract" ? "grid grid-rows-2 grid-flow-col place-content-center" : "grid grid-cols-5 grid-flow-row place-content-center";
           return(
             <Card>
               <CardHeader variant="gradient" color={contractData[contractType].contractColor} className="mb-8 p-6">
                 <Typography variant="h6" color="white">
-                  Green Contract
+                  {contractData[contractType].contractType}
                 </Typography>
               </CardHeader>
               <CardBody className="overflow-x-scroll">
-                <div key={contractData[contractType].contractColor} className="grid grid-rows-3 grid-flow-col gap-4 place-content-center">
+                <div key={contractData[contractType].contractColor} className={gridStyle}>
                   {contractData[contractType].contractList.map(
                     ({ name, energyRequire, benefits}, key) => {
 

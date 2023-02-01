@@ -1,6 +1,7 @@
 export const contractData =
   {
     greenContract: {
+      contractType: "Green Contract",
       contractColor: "green",
       contractList: [
         {
@@ -81,6 +82,7 @@ export const contractData =
       ],
     },
     yellowContract: {
+      contractType: "Yellow Contract",
       contractColor: "amber",
       contractList: [
         {
@@ -157,6 +159,123 @@ export const contractData =
           name: "Y15",
           energyRequire: 7,
           benefits: { vp: 6, brownMachine: 1, },
+        },
+      ],
+    },
+    redContract: {
+      contractType: "Red Contract",
+      contractColor: "red",
+      contractList: [
+        {
+          name: "R1",
+          energyRequire: 8,
+          benefits: { base: "", },
+        },
+        {
+          name: "R2",
+          energyRequire: 8,
+          benefits: { vp: 4, energyPro: 5, },
+        },
+        {
+          name: "R3",
+          energyRequire: 8,
+          benefits: { conduit: 4, },
+        },
+        {
+          name: "R4",
+          energyRequire: 8,
+          benefits: { vp: 4, rotate: 3 },
+        },
+        {
+          name: "R5",
+          energyRequire: 8,
+          benefits: { money: 4, whiteMachine: 1, rotate: 2, },
+        },
+        {
+          name: "R6",
+          energyRequire: 9,
+          benefits: { powerplant: 1, energyPro: 3},
+        },
+        {
+          name: "R7",
+          energyRequire: 9,
+          benefits: { elevator: 1, waterDrop: 2},
+        },
+        {
+          name: "R8",
+          energyRequire: 9,
+          benefits: { vp: 5, water: 3, brownMachine: 1},
+        },
+        {
+          name: "R9",
+          energyRequire: 9,
+          benefits: { vp: 3, money: 2, mixMachine: 2},
+        },
+        {
+          name: "R10",
+          energyRequire: 9,
+          benefits: { vp: 8, rotate: 1, },
+        },
+        {
+          name: "R11",
+          energyRequire: 10,
+          benefits: { vp: 2, mixMachine: 3, },
+        },
+        {
+          name: "R12",
+          energyRequire: 10,
+          benefits: { vp: 6, rotate: 2, water: 2},
+        },
+        {
+          name: "R13",
+          energyRequire: 10,
+          benefits: { conduit: 5, },
+        },
+        {
+          name: "R14",
+          energyRequire: 10,
+          benefits: { vp: 7, money: 3, },
+        },
+        {
+          name: "R15",
+          energyRequire: 10,
+          benefits: { vp: 8, waterDrop: 1, },
+        },
+      ],
+    },
+     nationalContract: {
+       contractType: "National Contract",
+      contractColor: "purple",
+      contractList: [
+        {
+          name: "N1",
+          energyRequire: 13,
+          benefits: { vp: 7, rotate: 4, },
+        },
+        {
+          name: "N2",
+          energyRequire: 13,
+          benefits: { vp: 6, mixMachine: 4, },
+        },
+        {
+          name: "N3",
+          energyRequire: 14,
+          benefits: { vp: 8, money: 8, },
+        },
+        {
+          name: "N4",
+          energyRequire: 14,
+          benefits: { vp: 8, energyPro: 6 },
+        },
+        {
+          name: "N5",
+          energyRequire: 15,
+          benefits: { vp: 12, },
+        },
+        {
+          name: "N6",
+          energyRequire: 15,
+          benefits: { vp: 9, waterDrop: 3 },
         },
       ],
     },
