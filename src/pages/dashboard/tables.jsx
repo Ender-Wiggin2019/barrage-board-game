@@ -61,18 +61,18 @@ function ExternalTable() {
   return (
     <div className="mt-8 mb-8 flex flex-col gap-10">
       {Object.keys(externalData).map(
-        (contractType) => {
-          const gridStyle = externalData[contractType].contractType === "National Contract" ? "grid grid-rows-2 grid-flow-col gap-1 place-content-center" : "grid grid-cols-5 grid-flow-row gap-5 place-content-center";
+        (externalType) => {
+          const gridStyle = "grid grid-cols-5 grid-flow-row gap-5 place-content-center";
           return(
             <Card>
-              <CardHeader variant="gradient" color={externalData[contractType].contractColor} className="mb-8 p-6">
+              <CardHeader variant="gradient" color={externalData[externalType].externalColor} className="mb-8 p-6">
                 <Typography variant="h6" color="white">
-                  {externalData[contractType].contractType}
+                  {externalData[externalType].externalType}
                 </Typography>
               </CardHeader>
               <CardBody className="overflow-x-scroll">
-                <div key={externalData[contractType].contractColor} className={gridStyle}>
-                  {externalData[contractType].contractList.map(
+                <div key={externalData[externalType].externalColor} className={gridStyle}>
+                  {externalData[externalType].externalList.map(
                     ({ name, machineRequire, benefits}, key) => {
 
                       return (
@@ -94,23 +94,6 @@ function ExternalTable() {
 }
 
 export function Tables() {
-
-  const data = [
-    {
-      label: "HTML",
-      value: "html",
-      desc: `It really matters and then like it really doesn't matter.
-      What matters is the people who are sparked by it. And the people
-      who are like offended by it, it doesn't matter.`,
-    },
-    {
-      label: "React",
-      value: "react",
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
-    },
-
-  ];
 
   return (
     <Tabs id="custom-animation" value="contract">

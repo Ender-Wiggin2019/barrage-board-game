@@ -4,6 +4,7 @@ import MessageCard from "../cards/message-card.jsx";
 import '../../../public/css/test.css'
 import React, { useRef } from "react";
 import { Element } from "./element.jsx"
+import { render } from "react-dom";
 
 
 export class ExternalWork extends React.Component {
@@ -19,7 +20,6 @@ export class ExternalWork extends React.Component {
         {
           Object.keys(this.props.machineRequire).map((element) => {
             const iconName = displayOrder[displayId] + " " + element + "-red";
-            console.log(iconName);
             displayId ++;
             return (
               <Element icon={iconName} value={this.props.machineRequire[element]}/>
@@ -29,29 +29,57 @@ export class ExternalWork extends React.Component {
       </div>
     );
   }
-  render() {
+
+  renderBenefits() {
     let displayId = 0;
-    const benefitsNumber = Object.keys(this.props.benefits).length;
+    // const benefitsNumber = Object.keys(this.props.benefits).length;
+    let benefitKeys = Object.keys(this.props.benefits); // array of all elements
+    let benefitKeysForRender = [];
+    console.log("111");
+    benefitKeys.forEach((benefit, index) => {
+      if (benefit.includes("elevator") || benefit.includes("powerplant")) {
+        for (let i = 1; i < this.props.benefits[benefit]; i ++ ) {
+          benefitKeysForRender.push(benefit);
+        }
+      }
+      benefitKeysForRender.push(benefit);
+    })
+
+    // can only have 3 elements
+    benefitKeysForRender = benefitKeysForRender.length > 3 ? benefitKeysForRender.slice(0, 3) : benefitKeysForRender;
+    const benefitsNumber = benefitKeys.length
     const displayOrder = [
       ["external-benefit-middle"],
       ["external-benefit-top", "external-benefit-bottom"],
       ["external-benefit-top", "external-benefit-bottom-left", "external-benefit-bottom-right"]
     ][benefitsNumber - 1]; // select the related display way
 
-    const renderMachine = this.renderMachine();
 
     return (
-      <div ref="contract" key={this.props.name} className="contract external">
-        {renderMachine}
+      <div key={this.props.name}>
         {
-          Object.keys(this.props.benefits).map((element) => {
-            const iconName = displayOrder[displayId] + " " + element;
+          benefitKeysForRender.map((element) => {
+            let iconName = "";
+            const scale =
+              benefitsNumber > 1 && (element.includes("base") || element.includes("conduit") || element.includes("elevator") || element.includes("powerplant"))
+                ? "scale-75" : "scale-90";
+            iconName = iconName + displayOrder[displayId] + " " + element;
             displayId ++;
             return (
-              <Element icon={iconName} value={this.props.benefits[element]}/>
+              <Element icon={iconName} scale={scale} value={this.props.benefits[element]}/>
             );
           })
         }
+      </div>
+    );
+  }
+
+  render() {
+
+    return (
+      <div key={this.props.name} className="contract external">
+        {this.renderMachine()}
+        {this.renderBenefits()}
       </div>
     );
   }

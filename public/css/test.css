@@ -166,9 +166,9 @@ a {
     color: #bb3f90;
     /*font-family: Arial;*/
     font-weight: bold;
-    margin-left: -4px;
+    margin-left: -5px;
     /*margin-top:0px;*/
-    margin-top: -10px;
+    margin-top: -12px;
     /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
     text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
     /*filter: drop-shadow(0 0 2px white);*/
@@ -196,7 +196,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    bottom: 20px;
+    top: 2px;
     background-size: 80% 80%;
 }
 
@@ -243,14 +243,14 @@ a {
     font-family: Arial;
     font-weight: bold;
     text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
-    font-size: 14px;
-    line-height: 29px;
+    font-size: 12px;
+    line-height: 27px;
     background-image: url(../img/vp.png);
     background-repeat: no-repeat;
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 70% auto;
+    background-size: 60% auto;
 }
 
 .money {
@@ -260,21 +260,21 @@ a {
     font-family: Arial;
     font-weight: bold;
     text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 28px;
     background-image: url(../img/resource-money.png);
     background-repeat: no-repeat;
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 70% auto;
+    background-size: 60% auto;
 }
 
 .rotate {
     display: inline-block;
     text-align: right;
     padding-top: 3px;
-    padding-right: 5px;
+    padding-right: 6px;
     color: #fff;
     font-family: Arial;
     font-weight: bold;
@@ -287,7 +287,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 60% auto;
+    background-size: 50% auto;
 }
 
 .brownMachine {
@@ -304,7 +304,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 60% auto;
+    background-size: 55% auto;
 }
 
 .whiteMachine {
@@ -321,7 +321,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 60% auto;
+    background-size: 55% auto;
 }
 
 .mixMachine {
@@ -338,7 +338,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 60% auto;
+    background-size: 55% auto;
 }
 
 .purpleMachine {
@@ -355,7 +355,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 60% auto;
+    background-size: 55% auto;
 }
 
 .brownMachine-red {
@@ -372,7 +372,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 60% auto;
+    background-size: 55% auto;
 }
 
 .whiteMachine-red {
@@ -389,7 +389,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 60% auto;
+    background-size: 55% auto;
 }
 
 .mixMachine-red {
@@ -406,7 +406,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 60% auto;
+    background-size: 55% auto;
 }
 
 .purpleMachine-red {
@@ -423,7 +423,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: 60% auto;
+    background-size: 55% auto;
 }
 
 .water {
@@ -470,13 +470,13 @@ a {
     /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
     text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
     /*filter: drop-shadow(0 0 2px white);*/
-    font-size: 15px;
+    font-size: 13px;
     line-height: 28px;
     background-repeat: no-repeat;
     background-position: 15px center;
     width: 28px;
     height: 28px;
-    background-size: 40% auto;
+    background-size: 30% auto;
     background-image: url(../img/arrow-right.png);
 }
 
