@@ -3,10 +3,13 @@
   "private": true,
   "version": "2.0.0",
   "type": "module",
+  "homepage": "https://ender-wiggin2019.github.io/barrage",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@heroicons/react": "2.0.12",
@@ -27,6 +30,7 @@
     "@types/react-dom": "18.0.6",
     "@vitejs/plugin-react": "2.1.0",
     "autoprefixer": "10.4.12",
+    "gh-pages": "^5.0.0",
     "postcss": "8.4.17",
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "0.1.13",
