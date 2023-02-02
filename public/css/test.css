@@ -125,7 +125,7 @@ a {
 
 .external-benefit-bottom-right {
     position: absolute;
-    margin-left: 63px;
+    margin-left: 62px;
     margin-top: 28px;
 }
 
@@ -184,7 +184,7 @@ a {
     background-position: center center;
     width: 28px;
     height: 28px;
-    background-size: contain;
+    background-size: 90% auto;
     /*border-width: 2px;*/
     /*vertical-align: middle;*/
     /*transform: scale(0.4);*/
@@ -479,6 +479,88 @@ a {
     background-size: 30% auto;
     background-image: url(../img/arrow-right.png);
 }
+
+.energy {
+    text-align: center;
+    color: #bb3f90;
+    font-family: Arial;
+    padding-right: 0px;
+    /*font-weight: bold;*/
+    /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    filter: drop-shadow(0 0 1px white);
+    font-size: 13px;
+    line-height: 28px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 80% auto;
+    background-image: url(../img/energy-bg.png);
+}
+
+
+.fulfillContract {
+    display: inline-block;
+    text-align: center;
+    color: #bb3f90;
+    font-family: Arial;
+    padding-right: 0px;
+    /*font-weight: bold;*/
+    /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    /*filter: drop-shadow(0 0 2px white);*/
+    font-size: 10px;
+    line-height: 32px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    width: 28px;
+    height: 28px;
+    background-size: 80% auto;
+    background-image: url(../img/fulfill-contract.png);
+}
+
+.fulfillAnyContract {
+    display: inline-block;
+    text-align: center;
+    color: #bb3f90;
+    font-family: Arial;
+    padding-right: 0px;
+    /*font-weight: bold;*/
+    /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    /*filter: drop-shadow(0 0 2px white);*/
+    font-size: 10px;
+    line-height: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 80% auto;
+    background-image: url(../img/fulfill-any-contract.png);
+}
+
+
+.techTile {
+    display: inline-block;
+    text-align: center;
+    color: #bb3f90;
+    font-family: Arial;
+    padding-right: 0px;
+    /*font-weight: bold;*/
+    /*text-shadow: 0 1px 1px black, 0 -1px 1px black, -1px 0px 1px black, 1px 0px 1px black;*/
+    text-shadow: #000 1px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    /*filter: drop-shadow(0 0 2px white);*/
+    font-size: 10px;
+    line-height: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 28px;
+    height: 28px;
+    background-size: 80% auto;
+    background-image: url(../img/tech-tile.png);
+}
+
 
 .icon-right-arrow {
     /*background-image: url(../img/arrow-right.png);*/

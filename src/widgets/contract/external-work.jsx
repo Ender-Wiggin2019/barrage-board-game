@@ -35,7 +35,6 @@ export class ExternalWork extends React.Component {
     // const benefitsNumber = Object.keys(this.props.benefits).length;
     let benefitKeys = Object.keys(this.props.benefits); // array of all elements
     let benefitKeysForRender = [];
-    console.log("111");
     benefitKeys.forEach((benefit, index) => {
       if (benefit.includes("elevator") || benefit.includes("powerplant")) {
         for (let i = 1; i < this.props.benefits[benefit]; i ++ ) {
@@ -45,9 +44,10 @@ export class ExternalWork extends React.Component {
       benefitKeysForRender.push(benefit);
     })
 
+
     // can only have 3 elements
     benefitKeysForRender = benefitKeysForRender.length > 3 ? benefitKeysForRender.slice(0, 3) : benefitKeysForRender;
-    const benefitsNumber = benefitKeys.length
+    const benefitsNumber = benefitKeysForRender.length;
     const displayOrder = [
       ["external-benefit-middle"],
       ["external-benefit-top", "external-benefit-bottom"],
@@ -64,6 +64,7 @@ export class ExternalWork extends React.Component {
               benefitsNumber > 1 && (element.includes("base") || element.includes("conduit") || element.includes("elevator") || element.includes("powerplant"))
                 ? "scale-75" : "scale-90";
             iconName = iconName + displayOrder[displayId] + " " + element;
+            console.log(iconName);
             displayId ++;
             return (
               <Element icon={iconName} scale={scale} value={this.props.benefits[element]}/>
@@ -77,7 +78,7 @@ export class ExternalWork extends React.Component {
   render() {
 
     return (
-      <div key={this.props.name} className="contract external">
+      <div key={this.props.name} className="scale-125 contract external">
         {this.renderMachine()}
         {this.renderBenefits()}
       </div>

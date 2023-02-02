@@ -15,7 +15,7 @@ export function Element(props) {
     const iconName = props.scale + " " + props.icon.split(' ')[0] + " location " + props.value;
     console.log(iconName);
     elementDiv = [(<div className={className}></div>), (<div className={iconName}></div>)];
-  } else if (props.icon.includes("elevator") || props.icon.includes("powerplant")) {
+  } else if (props.icon.includes("elevator") || props.icon.includes("powerplant") || props.icon.includes("techTile") || props.icon.includes("fulfillAnyContract")) {
     elementDiv = (<div className={className}></div>);
   } else {
     elementDiv = (<div className={className}>{props.value}</div>);
