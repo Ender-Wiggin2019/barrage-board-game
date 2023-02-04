@@ -19,21 +19,23 @@ import { Contract } from "@/widgets/contract";
 import React from "react";
 import PropTypes from "prop-types";
 import ExternalWork from "@/widgets/contract/external-work.jsx";
+import Image from "../../../public/img/bg.jpg"
 
 function ContractTable() {
   return (
-    <div className="mt-8 mb-8 flex flex-col gap-10">
+    <div className="mt-8 mb-8 flex flex-col gap-10 ">
       {Object.keys(contractData).map(
         (contractType) => {
-          const gridStyle = contractData[contractType].contractType === "National Contract" ? "grid grid-rows-2 grid-flow-col gap-1 place-content-center" : "grid grid-cols-5 grid-flow-row gap-5 place-content-center";
+          const gridStyle = contractData[contractType].contractType === "National Contract" ? "grid grid-rows-2 grid-flow-col gap-1 place-content-center" : "grid grid-cols-3 md:grid-cols-5  grid-flow-row gap-5 place-content-center";
           return(
-            <Card>
-              <CardHeader variant="gradient" color={contractData[contractType].contractColor} className="mb-8 p-6">
+            <Card color="transparent" className="rounded-xl border-solid border-4 border-orange-300">
+              <CardHeader variant="gradient" color={contractData[contractType].contractColor} className="mb-4 p-6">
                 <Typography variant="h6" color="white">
                   {contractData[contractType].contractType}
                 </Typography>
               </CardHeader>
               <CardBody className="overflow-x-scroll">
+
                 <div key={contractData[contractType].contractColor} className={gridStyle}>
                   {contractData[contractType].contractList.map(
                     ({ name, energyRequire, benefits}, key) => {
@@ -62,9 +64,9 @@ function ExternalTable() {
     <div className="mt-8 mb-8 flex flex-col gap-10">
       {Object.keys(externalData).map(
         (externalType) => {
-          const gridStyle = "grid grid-cols-5 grid-flow-row gap-5 place-content-center";
+          const gridStyle = "grid grid-cols-3 md:grid-cols-5 grid-flow-row gap-5 place-content-center";
           return(
-            <Card>
+            <Card color="transparent" className="rounded-xl border-solid border-4 border-orange-300">
               <CardHeader variant="gradient" color={externalData[externalType].externalColor} className="mb-8 p-6">
                 <Typography variant="h6" color="white">
                   {externalData[externalType].externalType}
@@ -76,7 +78,7 @@ function ExternalTable() {
                     ({ name, machineRequire, benefits}, key) => {
 
                       return (
-                        <div key={name} className="scale-100">
+                        <div key={name} className="scale-75 md:scale-100">
                           {/*<Avatar className="clip-avatar" src={img} alt={name} variant="circular" size="xl"/>*/}
                           <ExternalWork key={name} name={name} machineRequire={machineRequire} benefits={benefits}/>
                         </div>
@@ -96,17 +98,12 @@ function ExternalTable() {
 export function Tables() {
 
   return (
-    <Tabs id="custom-animation" value="contract">
+    <Tabs value="contract">
       <TabsHeader>
-        <Tab key="contract" value="contract">Contract</Tab>
+        <Tab key="contract" value="contract" className="bg-transparent">Contract</Tab>
         <Tab key="external" value="external">External Work</Tab>
       </TabsHeader>
-      <TabsBody
-        animate={{
-          mount: { y: 0 },
-          unmount: { y: 250 },
-        }}
-      >
+      <TabsBody>
         {/*{data.map(({ value, desc }) => (*/}
         <TabPanel key="contract" value="contract"><ContractTable /></TabPanel>
         {/*<TabPanel key="external" value="external"><ContractTable /></TabPanel>*/}

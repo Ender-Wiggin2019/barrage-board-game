@@ -64,7 +64,6 @@ export class ExternalWork extends React.Component {
               benefitsNumber > 1 && (element.includes("base") || element.includes("conduit") || element.includes("elevator") || element.includes("powerplant"))
                 ? "scale-75" : "scale-90";
             iconName = iconName + displayOrder[displayId] + " " + element;
-            console.log(iconName);
             displayId ++;
             return (
               <Element icon={iconName} scale={scale} value={this.props.benefits[element]}/>

@@ -7,6 +7,17 @@ a {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+body {
+    background-size: cover;
+    background-position: center;
+    min-height: 326px;
+    background-image: url(../img/bg.jpg);
+    background-size: 10% auto;
+    background-attachment: fixed;
+    background-repeat: repeat;
+
+}
+
 .contract {
     display: block;
     content: "";
@@ -560,6 +571,34 @@ a {
     background-size: 80% auto;
     background-image: url(../img/tech-tile.png);
 }
+
+.xo-avatar {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: -130px -13px;
+    width: 40px;
+    height: 40px;
+    background-size: 450% auto;
+}
+
+.xo-desc {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: -20px -46px;
+    width: 114px;
+    height: 38px;
+    background-size: 200% auto;
+}
+
+.xo-1 {
+
+    /*border-width: 2px;*/
+    /*vertical-align: middle;*/
+    /*transform: scale(0.4);*/
+    background-image: url(../img/test1.jpeg);
+}
+
+
 
 
 .icon-right-arrow {
