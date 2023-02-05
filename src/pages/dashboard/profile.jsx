@@ -44,7 +44,7 @@ export function Profile() {
               {["Name", "Ability", "Tier", "Source", ].map((el) => (
                 <th
                   key={el}
-                  className="border-b border-blue-gray-50 py-3 px-8 text-left"
+                  className="border-b border-blue-gray-50 py-3 px-12 sm:px-8 text-left"
                 >
                   <Typography
                     variant="small"
@@ -59,7 +59,7 @@ export function Profile() {
             <tbody>
             {xoData1.map(
               ({ id, name, startMachine, effectType, avatarDesc, effectDesc, additionalDesc, tier, tierDesc, tierComment, source }, key) => {
-                const className = `py-3 px-4 ${
+                const className = `py-3 px-3 sm:px-4 ${
                   key === xoData.length - 1
                     ? "border-b border-blue-gray-50" // TODO
                     : "border-b border-blue-gray-50"
@@ -72,7 +72,7 @@ export function Profile() {
                         {/*<Avatar src={img} alt={name} size="sm" />*/}
                         {/*<img className="rounded-full xo-avatar" src={img}></img>*/}
                         {/*<div className="shadow-sm border-2 rounded-full m-1">*/}
-                        <Tooltip content={name}>
+                        <Tooltip content={tierDesc}>
                           <div key={name} className={"scale-125 shadow-sm w-15 h-15 p-1 rounded-full ring-2 ring-amber-400 hover:ring-amber-100 dark:ring-amber-500 xo-avatar xo-" + id}></div>
                         {/*</div>*/}
                         </Tooltip>
@@ -95,7 +95,7 @@ export function Profile() {
                         </div>
                       </div>
                     </td>
-                    <td className={className}>
+                    <td className={className + " pr-8 sm:pr-0"}>
                       {/*<Typography className="text-xs font-semibold text-blue-gray-600">*/}
                       {/*  {job[0]}*/}
                       {/*</Typography>*/}
@@ -104,9 +104,9 @@ export function Profile() {
                       {/*</Typography>*/}
                       <Popover>
                         <PopoverHandler>
-                          <div className={"shadow-sm w-15 h-15 p-1 rounded-md ring-2 ring-amber-400 hover:ring-amber-100 dark:ring-amber-500 "+ effectType + " xo-" + id}></div>
+                          <div className={"scale-100 sm:scale-125 shadow-sm w-15 h-15 p-1 rounded-md ring-2 ring-amber-400 hover:ring-amber-100 dark:ring-amber-500 "+ effectType + " xo-" + id}></div>
                         </PopoverHandler>
-                        <PopoverContent className="w-auto">
+                        <PopoverContent className="w-96">
 
                           {/*<div className="align-middle xo-card xo-1"></div>*/}
                           <h5 className="font-bold">Effect Description</h5>
@@ -127,7 +127,7 @@ export function Profile() {
 
 
                     </td>
-                    <td className={className}>
+                    <td className={className + " pr-2 sm:pr-0"}>
                       <Popover>
                         <PopoverHandler>
                           <button className={ "bg-" + colorMap[tierDesc]["color"] + " hover:bg-" + colorMap[tierDesc]["hover"] + " w-16 text-white font-bold text-sm py-2 px-3 rounded-lg"}>

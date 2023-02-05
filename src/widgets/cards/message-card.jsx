@@ -12,7 +12,7 @@ export class MessageCard extends React.Component {
     // this.getRefsFromChild = this.getRefsFromChild.bind(this);
     this.state = {
       name: null,
-      energyRequire: "",
+      energyRequire: 0,
       chooseElements: {},
       optionalElements: {
         brownMachine: "",
