@@ -7,8 +7,24 @@ export class Contract extends React.Component {
 
   render() {
     let displayId = 0;
+
+    let benefitKeys = Object.keys(this.props.benefits); // array of all elements
+    let benefitKeysForRender = [];
+    benefitKeys.forEach((benefit, index) => {
+      if (benefit.includes("elevator") || benefit.includes("powerplant")) {
+        for (let i = 1; i < this.props.benefits[benefit]; i ++ ) {
+          benefitKeysForRender.push(benefit);
+        }
+      }
+      benefitKeysForRender.push(benefit);
+    })
+
+
+    // can only have 3 elements
+    benefitKeysForRender = benefitKeysForRender.length > 3 ? benefitKeysForRender.slice(0, 3) : benefitKeysForRender;
+    const benefitsNumber = benefitKeysForRender.length;
+
     let energyRequire = (<div className="contract-number">{this.props.energyRequire}</div>);
-    const benefitsNumber = Object.keys(this.props.benefits).length;
     const displayOrder = [
       ["contract-middle"],
       ["contract-top", "contract-bottom"],
@@ -25,11 +41,14 @@ export class Contract extends React.Component {
       <div ref="contract" key={this.props.name} className={contractColor}>
         {energyRequire}
         {
-          Object.keys(this.props.benefits).map((element) => {
+          benefitKeysForRender.map((element) => {
             const iconName = displayOrder[displayId] + " " + element;
+            const scale =
+              benefitsNumber > 1 && (element.includes("base") || element.includes("conduit") || element.includes("elevator") || element.includes("powerplant"))
+                ? "scale-75" : "scale-90";
             displayId ++;
             return (
-              <Element icon={iconName} value={this.props.benefits[element]}/>
+              <Element icon={iconName} scale={scale}  value={this.props.benefits[element]}/>
             );
           })
         }

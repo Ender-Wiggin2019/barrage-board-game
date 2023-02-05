@@ -3,7 +3,6 @@
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "homepage": "https://ender-wiggin2019.github.io/barrage",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,12 +16,16 @@
     "apexcharts": "3.35.5",
     "dom-to-image": "^2.6.0",
     "html-to-image": "^1.11.7",
+    "i18next": "^22.4.9",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-http-backend": "^2.1.1",
     "jspdf": "^2.5.1",
     "prop-types": "15.8.1",
     "rc-input-number": "^7.4.0",
     "react": "18.2.0",
     "react-apexcharts": "1.4.0",
     "react-dom": "18.2.0",
+    "react-i18next": "^12.1.5",
     "react-router-dom": "6.4.2"
   },
   "devDependencies": {

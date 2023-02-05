@@ -12,22 +12,23 @@ export class MessageCard extends React.Component {
     // this.getRefsFromChild = this.getRefsFromChild.bind(this);
     this.state = {
       name: null,
-      energyRequire: 0,
+      energyRequire: "",
       chooseElements: {},
       optionalElements: {
-        brownMachine: 0,
-        whiteMachine: 1,
-        mixMachine: 1,
-        purpleMachine: 1,
-        vp: 1,
-        money: 5,
-        // energyPro: 3,
-        water: 2,
-        waterDrop: 3,
-        base: 1,
-        elevator: 2,
-        conduit: 1,
-        powerplant: 1,
+        brownMachine: "",
+        whiteMachine: "",
+        mixMachine: "",
+        purpleMachine: "",
+        vp: "",
+        money: "",
+        energyPro: "X",
+        energy: "X",
+        water: "",
+        waterDrop: "",
+        base: "",
+        elevator: "",
+        conduit: "",
+        powerplant: "",
 
       },
     }
@@ -48,7 +49,7 @@ export class MessageCard extends React.Component {
     } else {
       if (Object.keys(eList).length === 3) alert("Can only have 3 elements!");
       else eList[elementKey] = 1;
-    }
+        }
     this.setState({chooseElements: eList});
   }
 
@@ -89,10 +90,12 @@ export class MessageCard extends React.Component {
 
     return (
       <div className="flex flex-col items-center">
+        <div id = "enlarge" className="scale-150">
         <div id="domEl" className="flex items-center scale-100">
         {/*<div id = "domEl" className="flex items-center scale-100">*/}
         {/*    <Contract id ="domEl" name="G1" passRefUpward={this.getRefsFromChild} energyRequire={this.state.energyRequire} benefits={this.state.chooseElements} />*/}
           <Contract id ="domEl" energyRequire={this.state.energyRequire} benefits={this.state.chooseElements} />
+        </div>
         </div>
         <br/><br/>
         <div className="flex items-center gap-8">
@@ -157,9 +160,10 @@ class ElementList extends React.Component { // 所有元素
 class ElementUnit extends React.Component { // 生成元素+数字输入框
   render() {
     const cName = "scale-100 hover:bg-sky-700 " + this.props.name; // TODO 样式调整
+
     return (
       // <button className={cName} onClick={this.props.onClick}></button>
-      <IconButton size="lg"><div className={cName} onClick={this.props.onClick}></div></IconButton>
+      <IconButton size="lg"><div className={cName} onClick={this.props.onClick}>{this.props.count}</div></IconButton>
     )
   }
 }

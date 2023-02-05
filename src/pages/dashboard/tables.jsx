@@ -28,7 +28,7 @@ function ContractTable() {
         (contractType) => {
           const gridStyle = contractData[contractType].contractType === "National Contract" ? "grid grid-rows-2 grid-flow-col gap-1 place-content-center" : "grid grid-cols-3 md:grid-cols-5  grid-flow-row gap-5 place-content-center";
           return(
-            <Card color="transparent" className="rounded-xl border-solid border-4 border-orange-300">
+            <Card className="rounded-xl border-solid border-4 border-orange-300 bg-opacity-10">
               <CardHeader variant="gradient" color={contractData[contractType].contractColor} className="mb-4 p-6">
                 <Typography variant="h6" color="white">
                   {contractData[contractType].contractType}
@@ -41,7 +41,7 @@ function ContractTable() {
                     ({ name, energyRequire, benefits}, key) => {
 
                       return (
-                        <div key={name} className="scale-100">
+                        <div key={name} className="scale-75 md:scale-100">
                           {/*<Avatar className="clip-avatar" src={img} alt={name} variant="circular" size="xl"/>*/}
                           <Contract key={name} name={name} energyRequire={energyRequire} benefits={benefits}/>
                         </div>
@@ -66,7 +66,7 @@ function ExternalTable() {
         (externalType) => {
           const gridStyle = "grid grid-cols-3 md:grid-cols-5 grid-flow-row gap-5 place-content-center";
           return(
-            <Card color="transparent" className="rounded-xl border-solid border-4 border-orange-300">
+            <Card className="rounded-xl border-solid border-4 border-orange-300 bg-opacity-10">
               <CardHeader variant="gradient" color={externalData[externalType].externalColor} className="mb-8 p-6">
                 <Typography variant="h6" color="white">
                   {externalData[externalType].externalType}

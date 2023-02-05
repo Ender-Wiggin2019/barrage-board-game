@@ -581,7 +581,16 @@ body {
     background-size: 450% auto;
 }
 
-.xo-desc {
+.xo-card {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 300px;
+    height: 216px;
+    background-size: 100% auto;
+}
+
+.xo-desc-1 {
     display: inline-block;
     background-repeat: no-repeat;
     background-position: -20px -46px;
@@ -590,13 +599,50 @@ body {
     background-size: 200% auto;
 }
 
-.xo-1 {
-
-    /*border-width: 2px;*/
-    /*vertical-align: middle;*/
-    /*transform: scale(0.4);*/
-    background-image: url(../img/test1.jpeg);
+.xo-desc-2 {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: -20px -50px;
+    width: 142px;
+    height: 38px;
+    background-size: 170% auto;
 }
+
+.xo-desc-3 {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: -20px -50px;
+    width: 138px;
+    height: 38px;
+    background-size: 175% auto;
+}
+
+.xo-desc-4 {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: -18px -52px;
+    width: 140px;
+    height: 38px;
+    background-size: 170% auto;
+}
+
+.xo-1 {background-image: url(../img/xo/xo-1.jpg);}
+.xo-2 {background-image: url(../img/xo/xo-2.jpg);}
+.xo-3 {background-image: url(../img/xo/xo-3.jpg);}
+.xo-4 {background-image: url(../img/xo/xo-4.jpg);}
+.xo-5 {background-image: url(../img/xo/xo-5.jpg);}
+.xo-6 {background-image: url(../img/xo/xo-6.jpg);}
+.xo-7 {background-image: url(../img/xo/xo-7.jpg);}
+.xo-8 {background-image: url(../img/xo/xo-8.jpg);}
+.xo-9 {background-image: url(../img/xo/xo-9.jpg);}
+.xo-10 {background-image: url(../img/xo/xo-10.jpg);}
+.xo-11 {background-image: url(../img/xo/xo-11.jpg);}
+.xo-12 {background-image: url(../img/xo/xo-12.jpg);}
+.xo-13 {background-image: url(../img/xo/xo-13.jpg);}
+.xo-14 {background-image: url(../img/xo/xo-14.jpg);}
+.xo-15 {background-image: url(../img/xo/xo-15.jpg);}
+.xo-16 {background-image: url(../img/xo/xo-16.jpg);}
+.xo-17 {background-image: url(../img/xo/xo-17.jpg);}
 
 
 
