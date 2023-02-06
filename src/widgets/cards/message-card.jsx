@@ -6,7 +6,7 @@ import { Contract } from "@/widgets/contract";
 import { toPng, toJpeg } from 'html-to-image';
 import '../../../public/css/test.css'
 
-export class MessageCard extends React.Component {
+export class ContractCreator extends React.Component {
   constructor(props){
     super(props);
     // this.getRefsFromChild = this.getRefsFromChild.bind(this);
@@ -168,7 +168,7 @@ class ElementUnit extends React.Component { // 生成元素+数字输入框
   }
 }
 
-export default MessageCard;
+export default ContractCreator;
 // class ElementUnit extends React.Component { // 生成元素+数字输入框
 //   constructor(props) {
 //     super(props);

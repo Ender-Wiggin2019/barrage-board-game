@@ -14,7 +14,7 @@ import {
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { projectsTableData, xoData } from "@/data";
 
-export function Profile() {
+export function ExecutiveOfficers() {
   const xoData1 = [...xoData].sort((a, b) => (a.tier < b.tier ? -1 : 1));
   const colorMap = {
     "S+" : { color: "red-500", hover: "red-700", },
@@ -181,4 +181,4 @@ export function Profile() {
   );
 }
 
-export default Profile;
+export default ExecutiveOfficers;

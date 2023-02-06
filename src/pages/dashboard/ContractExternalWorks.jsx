@@ -29,7 +29,7 @@ function ContractTable() {
           const gridStyle = contractData[contractType].contractType === "National Contract" ? "grid grid-rows-2 grid-flow-col gap-1 place-content-center" : "grid grid-cols-3 md:grid-cols-5  grid-flow-row gap-5 place-content-center";
           return(
             <Card className="rounded-xl border-solid border-4 border-orange-300 bg-opacity-10">
-              <CardHeader variant="gradient" color={contractData[contractType].contractColor} className="mb-4 p-6">
+              <CardHeader variant="gradient" color={contractData[contractType].contractColor} className="mb-4 p-3">
                 <Typography variant="h6" color="white">
                   {contractData[contractType].contractType}
                 </Typography>
@@ -95,7 +95,7 @@ function ExternalTable() {
   );
 }
 
-export function Tables() {
+export function ContractExternalWorks() {
 
   return (
     <Tabs value="contract">
@@ -115,4 +115,4 @@ export function Tables() {
   );
 }
 
-export default Tables;
+export default ContractExternalWorks;

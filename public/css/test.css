@@ -602,7 +602,7 @@ body {
 .xo-desc-2 {
     display: inline-block;
     background-repeat: no-repeat;
-    background-position: -20px -50px;
+    background-position: -18px -50px;
     width: 142px;
     height: 38px;
     background-size: 170% auto;
@@ -643,6 +643,36 @@ body {
 .xo-15 {background-image: url(../img/xo/xo-15.jpg);}
 .xo-16 {background-image: url(../img/xo/xo-16.jpg);}
 .xo-17 {background-image: url(../img/xo/xo-17.jpg);}
+
+
+.largeTechTile {
+    display: inline-block;
+    background-repeat: no-repeat;
+    /*background-position: center center;*/
+    width: 324px;
+    height: 140px;
+    /*background-size: 100% auto;*/
+    background-image: url(../img/technology_tiles.png);
+    margin: -50px -120px -50px -120px;
+    /*border-width: 20px;*/
+
+    transform: scale(0.3);
+    /*margin-left: 5px;*/
+
+}
+
+.c2 {background-position-x: -324px}
+.c3 {background-position-x: -648px}
+.c4 {background-position-x: -972px}
+.c5 {background-position-x: -1296px}
+.c6 {background-position-x: -1620px}
+.c7 {background-position-x: -1944px}
+.r2 {background-position-y: -140px}
+.r3 {background-position-y: -280px}
+.r4 {background-position-y: -420px}
+.r5 {background-position-y: -560px}
+
+
 
 
 

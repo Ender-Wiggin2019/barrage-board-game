@@ -3,10 +3,12 @@ import {
   UserCircleIcon,
   TableCellsIcon,
   BellIcon,
+  Cog8ToothIcon,
+  PlusCircleIcon,
   ArrowRightOnRectangleIcon,
   UserPlusIcon,
 } from "@heroicons/react/24/solid";
-import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
+import { Home, ExecutiveOfficers, ContractExternalWorks, TechTiles } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
 import CreateInterface from "./pages/dashboard/create.jsx";
 
@@ -18,56 +20,56 @@ export const routes = [
   {
     layout: "dashboard",
     pages: [
-      {
-        icon: <HomeIcon {...icon} />,
-        name: "dashboard",
-        path: "/home",
-        element: <Home />,
-      },
+      // {
+      //   icon: <HomeIcon {...icon} />,
+      //   name: "dashboard",
+      //   path: "/home",
+      //   element: <Home />,
+      // },
       {
         icon: <UserCircleIcon {...icon} />,
-        name: "profile",
-        path: "/profile",
-        element: <Profile />,
+        name: "Executive Officers",
+        path: "/executive-officers",
+        element: <ExecutiveOfficers />,
       },
       {
         icon: <TableCellsIcon {...icon} />,
-        name: "tables",
-        path: "/tables",
-        element: <Tables />,
+        name: "Contracts/External Works",
+        path: "/Contract-external-works",
+        element: <ContractExternalWorks />,
       },
       {
-        icon: <BellIcon {...icon} />,
-        name: "notifactions",
-        path: "/notifactions",
-        element: <Notifications />,
+        icon: <Cog8ToothIcon {...icon} />,
+        name: "Tech Tiles",
+        path: "/tech-tiles",
+        element: <TechTiles />,
       },
       {
-        icon: <BellIcon {...icon} />,
-        name: "create",
-        path: "/create",
+        icon: <PlusCircleIcon {...icon} />,
+        name: "creator",
+        path: "/creaor",
         element: <CreateInterface />,
       },
     ],
   },
-  {
-    title: "auth pages",
-    layout: "auth",
-    pages: [
-      {
-        icon: <ArrowRightOnRectangleIcon {...icon} />,
-        name: "sign in",
-        path: "/sign-in",
-        element: <SignIn />,
-      },
-      {
-        icon: <UserPlusIcon {...icon} />,
-        name: "sign up",
-        path: "/sign-up",
-        element: <SignUp />,
-      },
-    ],
-  },
+  // {
+  //   title: "auth pages",
+  //   layout: "auth",
+  //   pages: [
+  //     {
+  //       icon: <ArrowRightOnRectangleIcon {...icon} />,
+  //       name: "sign in",
+  //       path: "/sign-in",
+  //       element: <SignIn />,
+  //     },
+  //     {
+  //       icon: <UserPlusIcon {...icon} />,
+  //       name: "sign up",
+  //       path: "/sign-up",
+  //       element: <SignUp />,
+  //     },
+  //   ],
+  // },
 ];
 
 export default routes;
