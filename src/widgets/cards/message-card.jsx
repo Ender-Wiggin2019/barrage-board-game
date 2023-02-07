@@ -1,5 +1,9 @@
 import PropTypes from "prop-types";
-import { Button, IconButton, Avatar, Typography } from "@material-tailwind/react";
+import { Button, IconButton, Avatar, Typography, Select, Option,
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem, } from "@material-tailwind/react";
 import React, { useCallback, useRef } from "react";
 import ReactDOM from 'react-dom/client';
 import { Contract } from "@/widgets/contract";
@@ -26,11 +30,15 @@ export class ContractCreator extends React.Component {
         energy: "X",
         water: "",
         waterDrop: "",
-        base: "",
         elevator: "",
         conduit: "",
         powerplant: "",
-
+        fulfillContract: "X",
+        fulfillAnyContract: "",
+        techTile: "",
+      },
+      optionalSelectors: {
+        base: ["location plain", "location hills", "location mountain", "location plainhills"],
       },
     }
   }
@@ -77,17 +85,6 @@ export class ContractCreator extends React.Component {
   }
 
   render() {
-    //
-    // const downloadImage = async () => {
-    //   const dataUrl = await toPng(domEl.current);
-    //   console.log(dataUrl);
-    //
-    //   // download image
-    //   const link = document.createElement('a');
-    //   link.download = "html-to-img.png";
-    //   link.href = dataUrl;
-    //   link.click();
-    // }
 
     return (
       <div className="flex flex-col items-center">
@@ -102,26 +99,19 @@ export class ContractCreator extends React.Component {
         <div className="flex items-center gap-8">
           <Translation>
             {
-              (t, { i18n }) => <Button color="purple" onClick={() => this.handleEnergy()}>{t('Energy')}</Button>
+              (t, { i18n }) =>
+                <div className="flex items-center gap-8">
+                  <Button color="purple" onClick={() => this.handleEnergy()}>{t('Energy')}</Button>
+                  <Button onClick={() => this.reset()}>{t('Reset')}</Button>
+                  <Button onClick={() => this.downloadImg()}>{t('Download')}</Button>
+                </div>
             }
           </Translation>
-          {/*<Button color="purple" onClick={() => this.handleEnergy()}>Energy</Button>*/}
-          <Translation>
-            {
-              (t, { i18n }) => <Button onClick={() => this.reset()}>{t('Reset')}</Button>
-            }
-          </Translation>
-          {/*<Button onClick={() => this.reset()}>Reset</Button>*/}
-          <Translation>
-            {
-              (t, { i18n }) => <Button onClick={() => this.downloadImg()}>{t('Download')}</Button>
-            }
-          </Translation>
-          {/*<Button onClick={() => this.downloadImg()}>Download</Button>*/}
         </div>
         <br/>
-        <div className="flex items-center">
+        <div className="grid grid-rows-2 items-center">
           <ElementList optionalElements={this.state.optionalElements} onClick={(i) => this.handleClick(i)} />
+          <ElementList optionalElements={this.state.optionalSelectors} onClick={(i) => this.handleClick(i)} />
         </div>
       </div>
   );
@@ -136,8 +126,8 @@ class ElementList extends React.Component { // 所有元素
     return ( // TODO 处理每个单独的unit
       <ElementUnit
         key={elementKey}
-        name={elementKey}
-        count={elementValue}
+        elementKey={elementKey}
+        elementValue={elementValue}
         onClick={() => this.props.onClick(elementKey)}
         // onClick={() => this.props.onClick(i)}
       />
@@ -163,23 +153,42 @@ class ElementList extends React.Component { // 所有元素
   }
 }
 
-// const Button = (props) => {
-//   return (
-//     <button onClick={() =>
-//       props.sign == "+" ? props.updateCount(1) : props.updateCount(-1)}>
-//       {props.sign}
-//     </button>
-//
-//   );
-// }
-
 class ElementUnit extends React.Component { // 生成元素+数字输入框
   render() {
-    const cName = "scale-100 hover:bg-sky-700 " + this.props.name; // TODO 样式调整
+    const cName = "scale-100 hover:bg-sky-700 " + this.props.elementKey; // TODO 样式调整
+    if (Array.isArray(this.props.elementValue)) {
+      return (
+        <Translation>
+          {
+            (t, { i18n }) => <Menu>
+              <MenuHandler>
+                <IconButton size="lg"><div className={cName}></div></IconButton>
+              </MenuHandler>
+              <MenuList>
+                {this.props.elementValue.map((value) =>(
+                  <MenuItem value={value}><div className={"mr-5 " + value}></div>{t(value)}</MenuItem>
 
+                ))}
+              </MenuList>
+            </Menu>
+          }
+        </Translation>
+        //
+        //
+        // <div>
+        //   <IconButton size="lg"><div className={cName}></div></IconButton>
+        //   <Select size="sm">
+        //     {this.props.elementValue.map((value) =>(
+        //       <Option value={value}><div className={value}></div></Option>
+        //     ))}
+        //     {/*<Option value="en">English</Option>*/}
+        //     {/*<Option value="zh">中文</Option>*/}
+        //   </Select>
+        // </div>
+      )
+    }
     return (
-      // <button className={cName} onClick={this.props.onClick}></button>
-      <IconButton size="lg"><div className={cName} onClick={this.props.onClick}>{this.props.count}</div></IconButton>
+      <IconButton size="lg"><div className={cName} onClick={this.props.onClick}>{this.props.elementValue}</div></IconButton>
     )
   }
 }

@@ -20,6 +20,10 @@ i18n
       en: {
         translation: {
           "faq": "FAQ",
+          "location plain": "Plain",
+          "location hills": "Hills",
+          "location mountain": "Mountain",
+          "location plainhills": "Plain or Hills",
         }
       },
       zh: {
@@ -111,6 +115,10 @@ i18n
           "Extremely Good with Private Building Loan Agency, which allow your to build and activate the ability in one turn. Besides, if you're the first or second order in Round 2, you can even take 2 External Works in one turn. Sometimes this ability can be used to drop a water and perform a production.": "在有贷款机构的情况下r1造小房子连动秒外派有奇效,r2前置位贷款+外派双秒外派效果绝佳.偶尔用于落1水抢发电",
           "with Connection with Neutral Dams, you can finish National Contracts quickly.": "背造中立坝,在没有卷发电的情况下可以快速完成国家订单",
           "": "",
+          "location plain": "平原",
+          "location hills": "丘陵",
+          "location mountain": "山脉",
+          "location plainhills": "平原/丘陵",
 
         }
       }

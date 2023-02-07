@@ -6,17 +6,25 @@ import {
   Button,
   IconButton,
   Typography,
+  Select,
+  Option,
 } from "@material-tailwind/react";
 import { useMaterialTailwindController, setOpenSidenav } from "@/context";
 import { Translation, useTranslation, Trans } from 'react-i18next';
 
+
 export function Sidenav({ brandImg, brandName, routes }) {
+  const { t, i18n } = useTranslation();
   const [controller, dispatch] = useMaterialTailwindController();
   const { sidenavColor, sidenavType, openSidenav } = controller;
   const sidenavTypes = {
     dark: "bg-gradient-to-br from-blue-gray-800 to-blue-gray-900",
     white: "bg-white shadow-lg",
     transparent: "bg-transparent",
+  };
+
+  const handleChange = (value) => {
+    i18n.changeLanguage(value);
   };
 
   return (
@@ -97,6 +105,14 @@ export function Sidenav({ brandImg, brandName, routes }) {
                 </NavLink>
               </li>
             ))}
+
+            <div className="w-auto pt-5">
+              <Select label="Select Language" onChange={handleChange}>
+                <Option value="en">English</Option>
+                <Option value="zh">中文</Option>
+              </Select>
+            </div>
+
           </ul>
         ))}
       </div>

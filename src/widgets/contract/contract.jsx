@@ -11,7 +11,8 @@ export class Contract extends React.Component {
     let benefitKeys = Object.keys(this.props.benefits); // array of all elements
     let benefitKeysForRender = [];
     benefitKeys.forEach((benefit, index) => {
-      if (benefit.includes("elevator") || benefit.includes("powerplant")) {
+      if (benefit.includes("elevator") || benefit.includes("powerplant") ||
+        benefit.includes("fulfillAnyContract") || benefit.includes("techTile") ) {
         for (let i = 1; i < this.props.benefits[benefit]; i ++ ) {
           benefitKeysForRender.push(benefit);
         }
