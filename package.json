@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "build-css": "tailwindcss build -i ./src/input.css -o ./public/output.css",
+    "watch-css": "tailwindcss build -i ./src/input.css -o ./public/output.css --watch"
   },
   "dependencies": {
     "@heroicons/react": "2.0.12",

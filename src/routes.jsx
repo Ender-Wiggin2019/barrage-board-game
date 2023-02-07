@@ -8,9 +8,9 @@ import {
   ArrowRightOnRectangleIcon,
   UserPlusIcon,
 } from "@heroicons/react/24/solid";
-import { Home, ExecutiveOfficers, ContractExternalWorks, TechTiles } from "@/pages/dashboard";
+import { Home, ExecutiveOfficers, ContractExternalWorks, TechTiles, CreateInterface } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
-import CreateInterface from "./pages/dashboard/create.jsx";
+// import CreateInterface from "./pages/dashboard/create.jsx";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -46,7 +46,7 @@ export const routes = [
       },
       {
         icon: <PlusCircleIcon {...icon} />,
-        name: "creator",
+        name: "Creator",
         path: "/creaor",
         element: <CreateInterface />,
       },

@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { useMaterialTailwindController, setOpenSidenav } from "@/context";
+import { Translation, useTranslation, Trans } from 'react-i18next';
 
 export function Sidenav({ brandImg, brandName, routes }) {
   const [controller, dispatch] = useMaterialTailwindController();
@@ -31,12 +32,14 @@ export function Sidenav({ brandImg, brandName, routes }) {
       >
         <Link to="/" className="flex items-center gap-4 py-6 px-8">
           <Avatar src={brandImg} size="sm" />
-          <Typography
-            variant="h6"
-            color={sidenavType === "dark" ? "white" : "blue-gray"}
-          >
-            {brandName}
-          </Typography>
+          <Translation>
+            {
+              (t, { i18n }) => <Typography
+                variant="h6"
+                color={sidenavType === "dark" ? "white" : "blue-gray"}
+              >{t(brandName)}</Typography>
+            }
+          </Translation>
         </Link>
         <IconButton
           variant="text"
@@ -80,12 +83,15 @@ export function Sidenav({ brandImg, brandName, routes }) {
                       fullWidth
                     >
                       {icon}
-                      <Typography
-                        color="inherit"
-                        className="font-medium capitalize"
-                      >
-                        {name}
-                      </Typography>
+                      <Translation>
+                        {
+                          (t, { i18n }) => <Typography
+                            color="inherit"
+                            className="font-medium capitalize"
+                          >{t(name)}</Typography>
+                        }
+                      </Translation>
+
                     </Button>
                   )}
                 </NavLink>

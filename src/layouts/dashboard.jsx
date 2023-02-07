@@ -10,6 +10,7 @@ import {
 } from "@/widgets/layout";
 import routes from "@/routes";
 import { useMaterialTailwindController, setOpenConfigurator } from "@/context";
+import { Translation, useTranslation, Trans } from 'react-i18next';
 
 export function Dashboard() {
   const [controller, dispatch] = useMaterialTailwindController();

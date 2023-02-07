@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import { Contract } from "@/widgets/contract";
 import { toPng, toJpeg } from 'html-to-image';
 import '../../../public/css/test.css'
+import { Translation, useTranslation, Trans } from 'react-i18next';
 
 export class ContractCreator extends React.Component {
   constructor(props){
@@ -99,9 +100,24 @@ export class ContractCreator extends React.Component {
         </div>
         <br/><br/>
         <div className="flex items-center gap-8">
-          <Button color="purple" onClick={() => this.handleEnergy()}>Energy</Button>
-          <Button onClick={() => this.reset()}>Reset</Button>
-          <Button onClick={() => this.downloadImg()}>Download</Button>
+          <Translation>
+            {
+              (t, { i18n }) => <Button color="purple" onClick={() => this.handleEnergy()}>{t('Energy')}</Button>
+            }
+          </Translation>
+          {/*<Button color="purple" onClick={() => this.handleEnergy()}>Energy</Button>*/}
+          <Translation>
+            {
+              (t, { i18n }) => <Button onClick={() => this.reset()}>{t('Reset')}</Button>
+            }
+          </Translation>
+          {/*<Button onClick={() => this.reset()}>Reset</Button>*/}
+          <Translation>
+            {
+              (t, { i18n }) => <Button onClick={() => this.downloadImg()}>{t('Download')}</Button>
+            }
+          </Translation>
+          {/*<Button onClick={() => this.downloadImg()}>Download</Button>*/}
         </div>
         <br/>
         <div className="flex items-center">

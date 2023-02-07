@@ -21,14 +21,15 @@ import {
 import { Link } from "react-router-dom";
 import InputNumber from 'rc-input-number';
 import { ProfileInfoCard, ContractCreator } from "@/widgets/cards";
+import { useTranslation, Trans } from 'react-i18next';
 import { platformSettingsData, conversationsData, projectsData } from "@/data";
 import { Contract } from "@/widgets/contract";
 
 export function CreateInterface() {
   return (
     <>
-      <div className="p-20">
-        <ContractCreator/>
+      <div className="p-20 mt-12 mb-8">
+        <Trans><ContractCreator/></Trans>
       </div>
 
     </>

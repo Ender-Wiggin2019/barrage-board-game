@@ -15,6 +15,7 @@ import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import { projectsTableData, xoData, techTilesData, contractData } from "@/data";
 import { Contract } from "@/widgets/contract/index.js";
 import React from "react";
+import { Translation } from "react-i18next";
 
 export function TechTiles() {
   const techTilesData1 = [...techTilesData].sort((a, b) => (a.tier < b.tier ? -1 : 1));
@@ -43,9 +44,13 @@ export function TechTiles() {
         (age, index) => (
           <Card className="bg-opacity-60">
             <CardHeader variant="gradient" color={ageConfig[index].color} className="mb-2 p-3">
-              <Typography variant="h6" color="white">
-                {ageConfig[index].name}
-              </Typography>
+                <Translation>
+                  {
+                    (t, { i18n }) => <Typography variant="h6" color="white">
+                      {t(ageConfig[index].name)}
+                    </Typography>
+                  }
+                </Translation>
             </CardHeader>
             <CardBody className="overflow-x-scroll px-0 pt-0 pb-2 bg-opacity-40">
               <table className="w-full min-w-[640px] table-auto">
@@ -56,12 +61,16 @@ export function TechTiles() {
                       key={el}
                       className="border-b border-blue-gray-50 py-3 px-12 sm:px-8 text-left"
                     >
-                      <Typography
-                        variant="small"
-                        className="text-[11px] font-bold uppercase text-blue-gray-800"
-                      >
-                        {el}
-                      </Typography>
+                      <Translation>
+                        {
+                          (t, { i18n }) => <Typography
+                            variant="small"
+                            className="text-[11px] font-bold uppercase text-blue-gray-800"
+                          >
+                            {t(el)}
+                          </Typography>
+                        }
+                      </Translation>
                     </th>
                   ))}
                 </tr>
@@ -71,7 +80,7 @@ export function TechTiles() {
                   ({ id, position, effectDesc, additionalDesc, tier, tierDesc, tierComment, source }, key) => {
                     const className = `py-3 px-3 sm:px-4 ${
                       key === xoData.length - 1
-                        ? "border-b border-blue-gray-50" // TODO
+                        ? "" // TODO
                         : "border-b border-blue-gray-50"
                     }`;
 

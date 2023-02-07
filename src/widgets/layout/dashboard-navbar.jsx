@@ -26,6 +26,7 @@ import {
   setOpenSidenav,
 } from "@/context";
 
+import translator from "@/widgets/layout/translator.jsx";
 export function DashboardNavbar() {
   const [controller, dispatch] = useMaterialTailwindController();
   const { fixedNavbar, openSidenav } = controller;
@@ -83,6 +84,7 @@ export function DashboardNavbar() {
           >
             <Bars3Icon strokeWidth={3} className="h-8 w-8 text-amber-500" />
           </IconButton>
+        < translator/>
           {/*<Link to="/auth/sign-in">*/}
           {/*  <Button*/}
           {/*    variant="text"*/}
