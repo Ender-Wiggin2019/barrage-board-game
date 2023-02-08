@@ -24,6 +24,7 @@ i18n
           "location hills": "Hills",
           "location mountain": "Mountain",
           "location plainhills": "Plain or Hills",
+          "location na": "Any",
         }
       },
       zh: {
@@ -119,6 +120,10 @@ i18n
           "location hills": "丘陵",
           "location mountain": "山脉",
           "location plainhills": "平原/丘陵",
+          "location na": "任意",
+
+          "Contract": "合约",
+          "External Work": "外派",
 
         }
       }

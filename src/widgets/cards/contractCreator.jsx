@@ -1,15 +1,18 @@
 import PropTypes from "prop-types";
-import { Button, IconButton, Avatar, Typography, Select, Option,
+import {
+  Button, IconButton, Avatar, Typography, Select, Option,
   Menu,
   MenuHandler,
   MenuList,
-  MenuItem, } from "@material-tailwind/react";
+  MenuItem, Card, CardHeader, CardBody
+} from "@material-tailwind/react";
 import React, { useCallback, useRef } from "react";
 import ReactDOM from 'react-dom/client';
 import { Contract } from "@/widgets/contract";
 import { toPng, toJpeg } from 'html-to-image';
 import '../../../public/css/test.css'
 import { Translation, useTranslation, Trans } from 'react-i18next';
+import { contractData } from "@/data/index.js";
 
 export class ContractCreator extends React.Component {
   constructor(props){
@@ -30,6 +33,7 @@ export class ContractCreator extends React.Component {
         energy: "X",
         water: "",
         waterDrop: "",
+        rotate: "X",
         elevator: "",
         conduit: "",
         powerplant: "",
@@ -38,7 +42,7 @@ export class ContractCreator extends React.Component {
         techTile: "",
       },
       optionalSelectors: {
-        base: ["location plain", "location hills", "location mountain", "location plainhills"],
+        base: ["location plain", "location hills", "location mountain", "location plainhills", "location na"],
       },
     }
   }
@@ -61,6 +65,17 @@ export class ContractCreator extends React.Component {
         }
     this.setState({chooseElements: eList});
   }
+
+  handleSelect(event, elementKey) {
+    console.log(elementKey, event.target.getAttribute('value').split(' ')[1]);
+
+    let eList = this.state.chooseElements;
+    if (!eList.hasOwnProperty && Object.keys(eList).length === 3) alert("Can only have 3 elements!");
+    else eList[elementKey] = event.target.getAttribute('value').split(' ')[1];
+    this.setState({chooseElements: eList});
+  }
+
+
 
   reset() {
     this.setState({energyRequire: 0, chooseElements: {}});
@@ -85,41 +100,45 @@ export class ContractCreator extends React.Component {
   }
 
   render() {
-
     return (
       <div className="flex flex-col items-center">
-        <div id = "enlarge" className="scale-150">
-        <div id="domEl" className="flex items-center scale-100">
-        {/*<div id = "domEl" className="flex items-center scale-100">*/}
-        {/*    <Contract id ="domEl" name="G1" passRefUpward={this.getRefsFromChild} energyRequire={this.state.energyRequire} benefits={this.state.chooseElements} />*/}
-          <Contract id ="domEl" energyRequire={this.state.energyRequire} benefits={this.state.chooseElements} />
-        </div>
-        </div>
-        <br/><br/>
-        <div className="flex items-center gap-8">
-          <Translation>
-            {
-              (t, { i18n }) =>
-                <div className="flex items-center gap-8">
-                  <Button color="purple" onClick={() => this.handleEnergy()}>{t('Energy')}</Button>
-                  <Button onClick={() => this.reset()}>{t('Reset')}</Button>
-                  <Button onClick={() => this.downloadImg()}>{t('Download')}</Button>
-                </div>
-            }
-          </Translation>
-        </div>
-        <br/>
-        <div className="grid grid-rows-2 items-center">
-          <ElementList optionalElements={this.state.optionalElements} onClick={(i) => this.handleClick(i)} />
-          <ElementList optionalElements={this.state.optionalSelectors} onClick={(i) => this.handleClick(i)} />
-        </div>
+
+        <Card className="rounded-xl border-solid border-4 border-orange-300 bg-opacity-10 w-96">
+          <CardBody className="">
+            <div id = "enlarge" className="scale-150 flex items-center justify-center">
+              <div id="domEl" className="flex items-center scale-100">
+                {/*<div id = "domEl" className="flex items-center scale-100">*/}
+                {/*    <Contract id ="domEl" name="G1" passRefUpward={this.getRefsFromChild} energyRequire={this.state.energyRequire} benefits={this.state.chooseElements} />*/}
+                <Contract id ="domEl" energyRequire={this.state.energyRequire} benefits={this.state.chooseElements} />
+              </div>
+            </div>
+            <br/><br/>
+            <div className="flex items-center gap-8">
+              <Translation>
+                {
+                  (t, { i18n }) =>
+                    <div className="grid grid-cols-3 gap-4 w-96">
+                      <Button color="purple" onClick={() => this.handleEnergy()}>{t('Energy')}</Button>
+                      <Button color="white" className="bg-opacity-75" onClick={() => this.reset()}>{t('Reset')}</Button>
+                      <Button  color="amber" onClick={() => this.downloadImg()}>{t('Download')}</Button>
+                    </div>
+                }
+              </Translation>
+            </div>
+            <br/>
+            <div className="grid grid-rows-2 gap-y-10">
+              <ElementList optionalElements={this.state.optionalElements} onClick={(i) => this.handleClick(i)} />
+              {Object.keys(this.state.optionalSelectors).map((elementKey) => (
+                <ElementSelector elementKey={elementKey} elementValue={this.state.optionalSelectors[elementKey]} onClick={(i) => this.handleSelect(i,elementKey)} />
+              ))}
+              {/*<ElementList optionalElements={this.state.optionalSelectors}/>*/}
+            </div>
+          </CardBody>
+        </Card>
       </div>
   );
   }
 }
-// class MessageCard extends React.Component {
-//
-// }
 
 class ElementList extends React.Component { // 所有元素
   renderElement(elementKey, elementValue) {
@@ -138,7 +157,7 @@ class ElementList extends React.Component { // 所有元素
     let elementList = this.props.optionalElements;
     const elementKeys = Object.keys(elementList);
     return (
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-x-10 gap-y-3">
       {elementKeys.map((elementKey) => {
         return this.renderElement(elementKey, elementList[elementKey]); // TODO 加上div class，这是一个列表
         // return (<ElementUnit
@@ -154,71 +173,44 @@ class ElementList extends React.Component { // 所有元素
 }
 
 class ElementUnit extends React.Component { // 生成元素+数字输入框
+
   render() {
     const cName = "scale-100 hover:bg-sky-700 " + this.props.elementKey; // TODO 样式调整
-    if (Array.isArray(this.props.elementValue)) {
+    return (
+      <IconButton size="lg" color="white" className="bg-opacity-75"><div className={"scale-125" + cName} onClick={this.props.onClick}>{this.props.elementValue}</div></IconButton>
+    )
+  }
+}
+
+
+class ElementSelector extends React.Component { // 生成元素+数字输入框
+
+  render() {
+
+    const cName = "scale-100 hover:bg-sky-700 " + this.props.elementKey; // TODO 样式调整
       return (
         <Translation>
           {
             (t, { i18n }) => <Menu>
               <MenuHandler>
-                <IconButton size="lg"><div className={cName}></div></IconButton>
+                {/*<MenuHandler>*/}
+                <IconButton size="lg" color="blue" className="bg-opacity-75"><div className={cName}></div></IconButton>
               </MenuHandler>
               <MenuList>
                 {this.props.elementValue.map((value) =>(
-                  <MenuItem value={value}><div className={"mr-5 " + value}></div>{t(value)}</MenuItem>
+                  <MenuItem value={value} onClick={this.props.onClick}><div className={"mr-5 " + value}></div>{t(value)}</MenuItem>
 
                 ))}
               </MenuList>
             </Menu>
           }
         </Translation>
-        //
-        //
-        // <div>
-        //   <IconButton size="lg"><div className={cName}></div></IconButton>
-        //   <Select size="sm">
-        //     {this.props.elementValue.map((value) =>(
-        //       <Option value={value}><div className={value}></div></Option>
-        //     ))}
-        //     {/*<Option value="en">English</Option>*/}
-        //     {/*<Option value="zh">中文</Option>*/}
-        //   </Select>
-        // </div>
       )
     }
-    return (
-      <IconButton size="lg"><div className={cName} onClick={this.props.onClick}>{this.props.elementValue}</div></IconButton>
-    )
-  }
 }
 
+
 export default ContractCreator;
-// class ElementUnit extends React.Component { // 生成元素+数字输入框
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       count: 1
-//     }
-//
-//   }
-//
-//   handleCount(value) {
-//     this.setState((prevState) => ({ count: prevState.count + value }));
-//   }
-//
-//   render() {
-//     return (
-//       <div>
-//         <div className={name}></div>
-//         Current count: {this.state.count}
-//         <hr />
-//         <Button sign="+" count={this.state.count} updateCount={this.handleCount.bind(this)} />
-//         <Button sign="-" count={this.state.count} updateCount={this.handleCount.bind(this)} />
-//       </div>
-//     );
-//   }
-// }
 
 
 

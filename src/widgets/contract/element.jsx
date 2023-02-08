@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { Avatar, Typography } from "@material-tailwind/react";
-import ContractCreator from "../cards/message-card.jsx";
 import '../../../public/css/test.css'
 import React, { useRef } from "react";
 import ProfileInfoCard from "@/widgets/contract/profile-info-card.jsx";

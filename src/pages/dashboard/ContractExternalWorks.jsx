@@ -15,11 +15,12 @@ import {
 } from "@material-tailwind/react";
 
 import { contractData, externalData } from "@/data";
-import { Contract } from "@/widgets/contract";
+import { Contract, ExternalWork } from "@/widgets/contract";
 import React from "react";
 import PropTypes from "prop-types";
-import ExternalWork from "@/widgets/contract/external-work.jsx";
+// import ExternalWork from "@/widgets/contract/external-work.jsx";
 import Image from "../../../public/img/bg.jpg"
+import { Translation } from "react-i18next";
 
 function ContractTable() {
   return (
@@ -98,20 +99,26 @@ function ExternalTable() {
 export function ContractExternalWorks() {
 
   return (
-    <Tabs value="contract">
-      <TabsHeader>
-        <Tab key="contract" value="contract" className="bg-transparent">Contract</Tab>
-        <Tab key="external" value="external">External Work</Tab>
-      </TabsHeader>
-      <TabsBody>
-        {/*{data.map(({ value, desc }) => (*/}
-        <TabPanel key="contract" value="contract"><ContractTable /></TabPanel>
-        {/*<TabPanel key="external" value="external"><ContractTable /></TabPanel>*/}
 
-        <TabPanel key="external" value="external"><ExternalTable /></TabPanel> // TODO
+    <Translation>
+      {
+        (t, { i18n }) =>
+          <Tabs value="contract">
+            <TabsHeader>
+              <Tab key="contract" value="contract" className="bg-transparent">{t("Contract")}</Tab>
+              <Tab key="external" value="external">{t("External Work")}</Tab>
+            </TabsHeader>
+            <TabsBody>
+              {/*{data.map(({ value, desc }) => (*/}
+              <TabPanel key="contract" value="contract"><ContractTable/></TabPanel>
+              {/*<TabPanel key="external" value="external"><ContractTable /></TabPanel>*/}
 
-      </TabsBody>
-    </Tabs>
+              <TabPanel key="external" value="external"><ExternalTable /></TabPanel>
+
+            </TabsBody>
+          </Tabs>
+      }
+    </Translation>
   );
 }
 

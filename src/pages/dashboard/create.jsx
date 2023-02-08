@@ -10,7 +10,7 @@ import {
   Tab,
   Switch,
   Tooltip,
-  Button,
+  Button, TabsBody, TabPanel
 } from "@material-tailwind/react";
 import {
   HomeIcon,
@@ -20,21 +20,37 @@ import {
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 import InputNumber from 'rc-input-number';
-import { ProfileInfoCard, ContractCreator } from "@/widgets/cards";
-import { useTranslation, Trans } from 'react-i18next';
+import { ProfileInfoCard, ContractCreator, ExternalWorkCreator } from "@/widgets/cards";
+import { useTranslation, Trans, Translation } from "react-i18next";
 import { platformSettingsData, conversationsData, projectsData } from "@/data";
 import { Contract } from "@/widgets/contract";
+import React from "react";
+
 
 export function CreateInterface() {
-  return (
-    <>
-      <div className="p-20 mt-12 mb-8">
-        <Trans><ContractCreator/></Trans>
-      </div>
 
-    </>
+  return (
+    <Translation>
+      {
+        (t, { i18n }) =>
+          <Tabs value="contract">
+            <TabsHeader>
+              <Tab key="contract" value="contract" className="bg-transparent">{t("Contract")}</Tab>
+              <Tab key="external" value="external">{t("External Work")}</Tab>
+            </TabsHeader>
+            <TabsBody>
+              {/*{data.map(({ value, desc }) => (*/}
+              <TabPanel key="contract" value="contract"><ContractCreator/></TabPanel>
+              {/*<TabPanel key="external" value="external"><ContractTable /></TabPanel>*/}
+
+              <TabPanel key="external" value="external"><ExternalWorkCreator /></TabPanel>
+
+            </TabsBody>
+          </Tabs>
+      }
+    </Translation>
+
   );
 }
-
 
 export default CreateInterface;
