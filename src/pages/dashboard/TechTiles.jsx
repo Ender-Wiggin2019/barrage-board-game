@@ -105,7 +105,7 @@ export function TechTiles() {
                           {/*<Typography className="text-xs font-normal text-blue-gray-500">*/}
                           {/*  {job[1]}*/}
                           {/*</Typography>*/}
-                          <div> some words...</div>
+                          <div> ... </div>
 
                         </td>
                         <td className={className + " pr-2 sm:pr-0"}>

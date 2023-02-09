@@ -18,6 +18,8 @@ import { MaterialTailwindControllerProvider } from "@/context";
 import "../public/css/tailwind.css";
 
 import './i18n';
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-TETNL2QL3S');
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
