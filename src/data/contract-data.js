@@ -148,7 +148,7 @@ export const contractData =
         {
           name: "Y13",
           energyRequire: 7,
-          benefits: { vp: 6, waterDrop: 3},
+          benefits: { vp: 6, water: 3},
         },
         {
           name: "Y14",
