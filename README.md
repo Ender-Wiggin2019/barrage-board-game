@@ -15,3 +15,7 @@ This website collects information of the board game Barrage, and contains of the
 ## Editor Function
 
 ![img.png](images/demo.gif)
+
+## Credits
+
+Template from [Material Tailwind Dashboard React](https://www.creative-tim.com/product/material-tailwind-dashboard-react)
