@@ -5,7 +5,10 @@ function App() {
   return (
     <Routes>
       <Route path="/dashboard/*" element={<Dashboard />} />
-      <Route path="*" element={<Navigate to="/dashboard/executive-officers" replace />} />
+      <Route
+        path="*"
+        element={<Navigate to="/dashboard/executive-officers" replace />}
+      />
     </Routes>
   );
 }

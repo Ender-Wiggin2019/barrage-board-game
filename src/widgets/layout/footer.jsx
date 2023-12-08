@@ -7,9 +7,9 @@ export function Footer({ brandName, brandLink, routes }) {
 
   return (
     <footer className="py-2">
-      <div className="flex w-full flex-wrap items-center text-blue-gray-200 justify-center gap-6 px-2 md:justify-between">
+      <div className="flex w-full flex-wrap items-center justify-center gap-6 px-2 text-blue-gray-200 md:justify-between">
         <Typography variant="small" className="font-normal text-inherit">
-          &copy; {year}, made {" "}
+          &copy; {year}, made{" "}
           {/*<HeartIcon className="-mt-0.5 inline-block h-3.5 w-3.5" />*/}
           by{" "}
           <a
@@ -44,7 +44,10 @@ Footer.defaultProps = {
   brandName: "Ender",
   brandLink: "https://github.com/Ender-Wiggin2019",
   routes: [
-    { name: "About the Game", path: "https://boardgamegeek.com/boardgame/251247/barrage" },
+    {
+      name: "About the Game",
+      path: "https://boardgamegeek.com/boardgame/251247/barrage",
+    },
     { name: "Blog", path: "http://blog.ender.lol/" },
     { name: "License", path: "https://www.creative-tim.com/license" },
   ],

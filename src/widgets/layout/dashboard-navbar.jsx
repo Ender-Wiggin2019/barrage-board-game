@@ -1,11 +1,6 @@
 import { useLocation } from "react-router-dom";
-import {
-  Navbar,
-  IconButton,
-} from "@material-tailwind/react";
-import {
-  Bars3Icon,
-} from "@heroicons/react/24/solid";
+import { Navbar, IconButton } from "@material-tailwind/react";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 import {
   useMaterialTailwindController,
   setOpenConfigurator,
@@ -40,7 +35,7 @@ export function DashboardNavbar() {
           >
             <Bars3Icon strokeWidth={3} className="h-12 w-12 text-amber-500" />
           </IconButton>
-        < translator/>
+          <translator />
         </div>
       </div>
     </Navbar>

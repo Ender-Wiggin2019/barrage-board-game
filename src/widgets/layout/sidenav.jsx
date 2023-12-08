@@ -10,8 +10,7 @@ import {
   Option,
 } from "@material-tailwind/react";
 import { useMaterialTailwindController, setOpenSidenav } from "@/context";
-import { Translation, useTranslation, Trans } from 'react-i18next';
-
+import { Translation, useTranslation, Trans } from "react-i18next";
 
 export function Sidenav({ brandImg, brandName, routes }) {
   const { t, i18n } = useTranslation();
@@ -41,12 +40,14 @@ export function Sidenav({ brandImg, brandName, routes }) {
         <Link to="/" className="flex items-center gap-4 py-6 px-8">
           <Avatar src={brandImg} size="sm" />
           <Translation>
-            {
-              (t, { i18n }) => <Typography
+            {(t, { i18n }) => (
+              <Typography
                 variant="h6"
                 color={sidenavType === "dark" ? "white" : "blue-gray"}
-              >{t(brandName)}</Typography>
-            }
+              >
+                {t(brandName)}
+              </Typography>
+            )}
           </Translation>
         </Link>
         <IconButton
@@ -84,22 +85,23 @@ export function Sidenav({ brandImg, brandName, routes }) {
                         isActive
                           ? sidenavColor
                           : sidenavType === "dark"
-                          ? "white"
-                          : "blue-gray"
+                            ? "white"
+                            : "blue-gray"
                       }
                       className="flex items-center gap-4 px-4 capitalize"
                       fullWidth
                     >
                       {icon}
                       <Translation>
-                        {
-                          (t, { i18n }) => <Typography
+                        {(t, { i18n }) => (
+                          <Typography
                             color="inherit"
                             className="font-medium capitalize"
-                          >{t(name)}</Typography>
-                        }
+                          >
+                            {t(name)}
+                          </Typography>
+                        )}
                       </Translation>
-
                     </Button>
                   )}
                 </NavLink>
@@ -107,12 +109,15 @@ export function Sidenav({ brandImg, brandName, routes }) {
             ))}
 
             <div className="w-auto pt-5">
-              <Select label="Select Language" value={i18n.language} onChange={handleChange}>
+              <Select
+                label="Select Language"
+                value={i18n.language}
+                onChange={handleChange}
+              >
                 <Option value="en">English</Option>
                 <Option value="zh">中文</Option>
               </Select>
             </div>
-
           </ul>
         ))}
       </div>

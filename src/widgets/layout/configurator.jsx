@@ -57,7 +57,7 @@ export function Configurator() {
 
   React.useEffect(() => {
     const stars = fetch(
-      "https://api.github.com/repos/creativetimofficial/material-tailwind-dashboard-react"
+      "https://api.github.com/repos/creativetimofficial/material-tailwind-dashboard-react",
     )
       .then((response) => response.json())
       .then((data) => setStars(formatNumber(data.stargazers_count, 1)));

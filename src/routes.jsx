@@ -2,10 +2,16 @@ import {
   UserCircleIcon,
   Cog8ToothIcon,
   PlusCircleIcon,
-    WrenchIcon,
-    DocumentCheckIcon,
+  WrenchIcon,
+  DocumentCheckIcon,
 } from "@heroicons/react/24/solid";
-import { ExecutiveOfficers, Contracts, ExternalWorks, TechTiles, CreateInterface } from "@/pages/dashboard";
+import {
+  ExecutiveOfficers,
+  Contracts,
+  ExternalWorks,
+  TechTiles,
+  CreateInterface,
+} from "@/pages/dashboard";
 // import CreateInterface from "./pages/dashboard/create.jsx";
 
 const icon = {
