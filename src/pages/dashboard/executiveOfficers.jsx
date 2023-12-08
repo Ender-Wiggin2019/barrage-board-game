@@ -116,18 +116,11 @@ export function ExecutiveOfficers() {
                     <tr key={name}>
                       <td className={className}>
                         <div className="flex items-center gap-2">
-                          {/*<Avatar src={img} alt={name} size="sm" />*/}
-                          {/*<img className="rounded-full xo-avatar" src={img}></img>*/}
-                          {/*<div className="shadow-sm border-2 rounded-full m-1">*/}
                           <Tooltip content={tierDesc}>
                             <div
                               key={name}
-                              className={
-                                "w-15 h-15 xo-avatar xo- scale-125 rounded-full p-1 shadow-sm ring-2 ring-amber-400 hover:ring-amber-100 dark:ring-amber-500" +
-                                id
-                              }
-                            ></div>
-                            {/*</div>*/}
+                              className={"scale-125 shadow-sm w-15 h-15 p-1 rounded-full ring-2 ring-amber-400 hover:ring-amber-100 dark:ring-amber-500 xo-avatar xo-" + id}>
+                            </div>
                           </Tooltip>
                           <div>
                             <Translation>

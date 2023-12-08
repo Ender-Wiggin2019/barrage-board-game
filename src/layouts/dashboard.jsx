@@ -1,7 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { Cog6ToothIcon } from "@heroicons/react/24/solid";
-import { IconButton } from "@material-tailwind/react";
-import Image from "../../public/img/bg.jpg";
 import {
   Sidenav,
   DashboardNavbar,
@@ -18,11 +15,6 @@ export function Dashboard() {
 
   return (
     <div>
-      {/*<div*/}
-      {/*  className="bg-repeat absolute inset-0 z-0 h-full w-full object-cover"*/}
-      {/*  style={{ backgroundImage: 'url(' + Image + ')', backgroundSize: '10%' , backgroundAttachment: 'fixed'}}*/}
-      {/*></div>*/}
-      {/*<div className="min-h-screen bg-blue-gray-50/50"> // TODO maybe change color*/}
       <div className="min-h-screen">
         <Sidenav
           routes={routes}
@@ -32,16 +24,6 @@ export function Dashboard() {
         />
         <div className="p-4 xl:ml-80">
           <DashboardNavbar />
-          {/*<Configurator />*/}
-          {/*<IconButton*/}
-          {/*  size="lg"*/}
-          {/*  color="white"*/}
-          {/*  className="fixed bottom-8 right-8 z-40 rounded-full shadow-blue-gray-900/10"*/}
-          {/*  ripple={false}*/}
-          {/*  onClick={() => setOpenConfigurator(dispatch, true)}*/}
-          {/*>*/}
-          {/*  <Cog6ToothIcon className="h-5 w-5" />*/}
-          {/*</IconButton>*/}
           <Routes>
             {routes.map(
               ({ layout, pages }) =>

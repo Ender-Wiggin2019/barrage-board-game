@@ -4,8 +4,6 @@ import {
   CardHeader,
   Typography,
 } from "@material-tailwind/react";
-import { contractData } from "@/data/index.js";
-import { Contract } from "@/widgets/contract/index.js";
 import React from "react";
 
 export function ContainerCard({ color, header, children }) {

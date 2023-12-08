@@ -63,7 +63,7 @@ export class ExternalWork extends React.Component {
 
     return (
       <div key={this.props.name}>
-        {benefitKeysForRender.map((element) => {
+        {benefitKeysForRender.map((element, index) => {
           let iconName = "";
           const scale =
             benefitsNumber > 1 &&
@@ -77,6 +77,7 @@ export class ExternalWork extends React.Component {
           displayId++;
           return (
             <Element
+              key={'element-'+index}
               icon={iconName}
               scale={scale}
               value={this.props.benefits[element]}

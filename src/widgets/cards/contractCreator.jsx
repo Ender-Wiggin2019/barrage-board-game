@@ -1,27 +1,18 @@
-import PropTypes from "prop-types";
 import {
   Button,
   IconButton,
-  Avatar,
-  Typography,
-  Select,
-  Option,
   Menu,
   MenuHandler,
   MenuList,
   MenuItem,
   Card,
-  CardHeader,
   CardBody,
 } from "@material-tailwind/react";
-import React, { useCallback, useRef } from "react";
-import ReactDOM from "react-dom/client";
+import React from "react";
 import { Contract } from "@/widgets/contract";
-import { toPng, toJpeg } from "html-to-image";
+import { toPng } from "html-to-image";
 import "../../../public/css/test.css";
-import { Translation, useTranslation, Trans } from "react-i18next";
-import { contractData } from "@/data/index.js";
-import { options } from "prettier-plugin-tailwindcss";
+import { Translation } from "react-i18next";
 
 export class ContractCreator extends React.Component {
   constructor(props) {
@@ -142,7 +133,7 @@ export class ContractCreator extends React.Component {
                     >
                       {t("Reset")}
                     </Button>
-                    <Button color="amber" onClick={() => this.downloadImg()}>
+                    <Button color="amber" className="" onClick={() => this.downloadImg()}>
                       {t("Download")}
                     </Button>
                   </div>
@@ -249,5 +240,3 @@ class ElementSelector extends React.Component {
     );
   }
 }
-
-export default ContractCreator;

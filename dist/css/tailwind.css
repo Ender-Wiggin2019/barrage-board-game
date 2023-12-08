@@ -1,11 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities {
-
-    .clip-avatar {
-
-        clip-path: circle(50px at center);
-
-    }
-
+  .clip-avatar {
+    clip-path: circle(50px at center);
+  }
 }

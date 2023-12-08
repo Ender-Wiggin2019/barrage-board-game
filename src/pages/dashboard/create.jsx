@@ -1,27 +1,10 @@
 import {
-  Card,
-  CardBody,
-  CardHeader,
-  CardFooter,
-  Avatar,
-  Typography,
   Tabs,
   TabsHeader,
   Tab,
-  Switch,
-  Tooltip,
-  Button,
   TabsBody,
   TabPanel,
 } from "@material-tailwind/react";
-import {
-  HomeIcon,
-  ChatBubbleLeftEllipsisIcon,
-  Cog6ToothIcon,
-  PencilIcon,
-} from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
-import InputNumber from "rc-input-number";
 import { ContractCreator, ExternalWorkCreator } from "@/widgets/cards";
 import { useTranslation, Trans, Translation } from "react-i18next";
 import { Contract } from "@/widgets/contract";

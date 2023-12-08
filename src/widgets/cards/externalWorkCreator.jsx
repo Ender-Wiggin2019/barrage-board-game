@@ -1,26 +1,18 @@
-import PropTypes from "prop-types";
 import {
   Button,
   IconButton,
-  Avatar,
-  Typography,
-  Select,
-  Option,
   Menu,
   MenuHandler,
   MenuList,
   MenuItem,
   Card,
-  CardHeader,
   CardBody,
 } from "@material-tailwind/react";
-import React, { useCallback, useRef } from "react";
-import ReactDOM from "react-dom/client";
-import { Contract, ExternalWork } from "@/widgets/contract";
-import { toPng, toJpeg } from "html-to-image";
+import React from "react";
+import { ExternalWork } from "@/widgets/contract";
+import { toPng } from "html-to-image";
 import "../../../public/css/test.css";
-import { Translation, useTranslation, Trans } from "react-i18next";
-import { contractData } from "@/data/index.js";
+import { Translation} from "react-i18next";
 
 export class ExternalWorkCreator extends React.Component {
   constructor(props) {
@@ -226,11 +218,6 @@ class ElementList extends React.Component {
       <div className="grid grid-cols-4 gap-x-10 gap-y-3">
         {elementKeys.map((elementKey) => {
           return this.renderElement(elementKey, elementList[elementKey]); // TODO 加上div class，这是一个列表
-          // return (<ElementUnit
-          //   key={elementKey}
-          //   name={elementKey}
-          //   onClick={() => this.props.onClick(elementKey)}
-          // />)
         })}
       </div>
       // <div className="grid grid-cols-4 gap-4"><ElementUnit name="brownMachine"  onClick={() => this.props.onClick("brownMachine")}/><ElementUnit name="money" onClick={() => this.props.onClick("money")}/></div>
@@ -282,5 +269,3 @@ class ElementSelector extends React.Component {
     );
   }
 }
-
-export default ExternalWorkCreator;

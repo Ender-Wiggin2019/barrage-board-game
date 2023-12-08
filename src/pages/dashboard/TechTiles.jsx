@@ -8,7 +8,7 @@ import {
   PopoverHandler,
   PopoverContent,
 } from "@material-tailwind/react";
-import { xoData, techTilesData } from "@/data";
+import { techTilesData } from "@/data";
 import React from "react";
 import { Translation } from "react-i18next";
 
@@ -92,7 +92,7 @@ export function TechTiles() {
                     key,
                   ) => {
                     const className = `py-3 px-3 sm:px-4 ${
-                      key === xoData.length - 1
+                      key === techTilesData.length - 1
                         ? "" // TODO
                         : "border-b border-blue-gray-50"
                     }`;

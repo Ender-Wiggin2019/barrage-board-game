@@ -47,7 +47,7 @@ export class Contract extends React.Component {
     return (
       <div ref="contract" key={this.props.name} className={contractColor}>
         {energyRequire}
-        {benefitKeysForRender.map((element) => {
+        {benefitKeysForRender.map((element, index) => {
           const iconName = displayOrder[displayId] + " " + element;
           const scale =
             benefitsNumber > 1 &&
@@ -60,6 +60,7 @@ export class Contract extends React.Component {
           displayId++;
           return (
             <Element
+              key={'element-'+index}
               icon={iconName}
               scale={scale}
               value={this.props.benefits[element]}
