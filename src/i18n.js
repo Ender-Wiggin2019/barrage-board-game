@@ -124,7 +124,7 @@ i18n
 
           "Contract": "合约",
           "External Work": "外派",
-
+          "For mobile phone users, you can scroll and click any icon to see more information." : "对于手机用户，你可以左滑或者点击屏幕的任何按钮以查看更多信息。",
         }
       }
     }

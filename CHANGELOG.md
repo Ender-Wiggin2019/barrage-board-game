@@ -1,26 +1,20 @@
 # Change Log
 
-## [2.0.0] 2022-11-02
+## [0.2.0] 2023-12-08
 
-- Update the entire structure
-- Migration to vite
-- Migration to React 18
-- Migration to React Router DOM 6
-- Migration to @material-tailwind/react latest version
-- Migration from chart.js to apexcharts
-- Add global context support
+- Code clean
 
-## [1.1.0] 2021-06-10
+## [0.1.0] 2022-02-10
 
 ### New Features
 
-- Add the download button
+- Contract
+- External work
+- Language switcher
+- Executive officers
+- Contract and external work editor
 
-### Bug Fixing
-
-- Fix the dropdown of admin navbar
-
-## [1.0.0] 2021-06-08
+## [0.0.1] 2021-06-08
 
 ### Original Release
 

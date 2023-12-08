@@ -1,15 +1,11 @@
 import {
-  HomeIcon,
   UserCircleIcon,
-  TableCellsIcon,
-  BellIcon,
   Cog8ToothIcon,
   PlusCircleIcon,
-  ArrowRightOnRectangleIcon,
-  UserPlusIcon,
+    WrenchIcon,
+    DocumentCheckIcon,
 } from "@heroicons/react/24/solid";
-import { Home, ExecutiveOfficers, ContractExternalWorks, TechTiles, CreateInterface } from "@/pages/dashboard";
-import { SignIn, SignUp } from "@/pages/auth";
+import { ExecutiveOfficers, Contracts, ExternalWorks, TechTiles, CreateInterface } from "@/pages/dashboard";
 // import CreateInterface from "./pages/dashboard/create.jsx";
 
 const icon = {
@@ -20,12 +16,6 @@ export const routes = [
   {
     layout: "dashboard",
     pages: [
-      // {
-      //   icon: <HomeIcon {...icon} />,
-      //   name: "dashboard",
-      //   path: "/home",
-      //   element: <Home />,
-      // },
       {
         icon: <UserCircleIcon {...icon} />,
         name: "Executive Officers",
@@ -33,10 +23,16 @@ export const routes = [
         element: <ExecutiveOfficers />,
       },
       {
-        icon: <TableCellsIcon {...icon} />,
-        name: "Contracts/External Works",
-        path: "/Contract-external-works",
-        element: <ContractExternalWorks />,
+        icon: <DocumentCheckIcon {...icon} />,
+        name: "Contracts",
+        path: "/contracts",
+        element: <Contracts />,
+      },
+      {
+        icon: <WrenchIcon {...icon} />,
+        name: "External Works",
+        path: "/external-works",
+        element: <ExternalWorks />,
       },
       {
         icon: <Cog8ToothIcon {...icon} />,
@@ -52,24 +48,6 @@ export const routes = [
       },
     ],
   },
-  // {
-  //   title: "auth pages",
-  //   layout: "auth",
-  //   pages: [
-  //     {
-  //       icon: <ArrowRightOnRectangleIcon {...icon} />,
-  //       name: "sign in",
-  //       path: "/sign-in",
-  //       element: <SignIn />,
-  //     },
-  //     {
-  //       icon: <UserPlusIcon {...icon} />,
-  //       name: "sign up",
-  //       path: "/sign-up",
-  //       element: <SignUp />,
-  //     },
-  //   ],
-  // },
 ];
 
 export default routes;

@@ -13,6 +13,7 @@ import { toPng, toJpeg } from 'html-to-image';
 import '../../../public/css/test.css'
 import { Translation, useTranslation, Trans } from 'react-i18next';
 import { contractData } from "@/data/index.js";
+import { options } from "prettier-plugin-tailwindcss";
 
 export class ContractCreator extends React.Component {
   constructor(props){
@@ -47,14 +48,6 @@ export class ContractCreator extends React.Component {
     }
   }
 
-  // getRefsFromChild(childRefs) {
-  //   // you can get your requested value here, you can either use state/props/ or whatever you like based on your need case by case
-  //   this.setState({
-  //     myRequestedRefs: childRefs
-  //   });
-  //   console.log("myRequestedRefs",this.state.myRequestedRefs); // this should have *info*, *contact* as keys
-  // }
-
   handleClick(elementKey) {
     let eList = this.state.chooseElements;
     if (eList.hasOwnProperty(elementKey)) {
@@ -88,7 +81,7 @@ export class ContractCreator extends React.Component {
   async downloadImg() {
     // const downloadImage = async () => {
     console.log(document.getElementById("domEl"));
-      const dataUrl = await toPng(document.getElementById("domEl"));
+      const dataUrl = await toPng(document.getElementById("domEl"), { pixelRatio: 5 });
     // const dataUrl = await toJpeg(document.getElementById("domEl"),  { quality: 0.95 });
 
     // download image

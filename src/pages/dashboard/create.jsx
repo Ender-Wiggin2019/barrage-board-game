@@ -20,9 +20,8 @@ import {
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 import InputNumber from 'rc-input-number';
-import { ProfileInfoCard, ContractCreator, ExternalWorkCreator } from "@/widgets/cards";
+import { ContractCreator, ExternalWorkCreator } from "@/widgets/cards";
 import { useTranslation, Trans, Translation } from "react-i18next";
-import { platformSettingsData, conversationsData, projectsData } from "@/data";
 import { Contract } from "@/widgets/contract";
 import React from "react";
 

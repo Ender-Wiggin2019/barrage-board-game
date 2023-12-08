@@ -3,17 +3,12 @@ import {
   CardHeader,
   CardBody,
   Typography,
-  Avatar,
-  Chip,
   Tooltip,
-  Progress,
   Popover,
   PopoverHandler,
   PopoverContent,
 } from "@material-tailwind/react";
-import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
-import { projectsTableData, xoData, techTilesData, contractData } from "@/data";
-import { Contract } from "@/widgets/contract/index.js";
+import { xoData, techTilesData } from "@/data";
 import React from "react";
 import { Translation } from "react-i18next";
 
@@ -43,7 +38,7 @@ export function TechTiles() {
       {techTilesData1.map(
         (age, index) => (
           <Card className="bg-opacity-60">
-            <CardHeader variant="gradient" color={ageConfig[index].color} className="mb-2 p-3">
+            <CardHeader variant="gradient" shadow={false} color={ageConfig[index].color} className="mb-2 p-3 text-center">
                 <Translation>
                   {
                     (t, { i18n }) => <Typography variant="h6" color="white">
@@ -88,23 +83,12 @@ export function TechTiles() {
                       <tr key={name}>
                         <td className={className}>
                           <div className="flex items-center gap-2">
-                            {/*<Avatar src={img} alt={name} size="sm" />*/}
-                            {/*<img className="rounded-full xo-avatar" src={img}></img>*/}
-                            {/*<div className="shadow-sm border-2 rounded-full m-1">*/}
                             <Tooltip content={tierDesc}>
-                              {/*<div key={name} className={"scale-125 shadow-sm w-15 h-15 p-1 rounded-full ring-2 ring-amber-400 hover:ring-amber-100 dark:ring-amber-500 xo-avatar xo-" + id}></div>*/}
                               <div key={name} className={"largeTechTile r" + position.row +" c" + position.col}></div>
-                              {/*</div>*/}
                             </Tooltip>
                           </div>
                         </td>
                         <td className={className + " pr-8 sm:pr-0"}>
-                          {/*<Typography className="text-xs font-semibold text-blue-gray-600">*/}
-                          {/*  {job[0]}*/}
-                          {/*</Typography>*/}
-                          {/*<Typography className="text-xs font-normal text-blue-gray-500">*/}
-                          {/*  {job[1]}*/}
-                          {/*</Typography>*/}
                           <div> ... </div>
 
                         </td>
@@ -117,10 +101,7 @@ export function TechTiles() {
                             </PopoverHandler>
                             <PopoverContent>
 
-                              {/*<div className="align-middle xo-card xo-1"></div>*/}
                               <button className={ "bg-" + colorMap[tierDesc]["color"]  + " w-16 text-white font-bold text-sm py-2 px-3 rounded-lg"}>{tierDesc}</button>
-                              {/*<h5 className="font-bold">TierComment</h5>*/}
-                              {/*<div className={"text-" + colorMap[tierDesc]["color"]}>{tierComment}</div>*/}
                               <div className="w-80">{tierComment}</div>
 
 
@@ -129,26 +110,10 @@ export function TechTiles() {
                         </td>
 
                         <td className={className}>
-                          {console.log("bg-" + colorMap[source]["color"] + " w-16 text-center text-white font-bold text-sm py-2 px-3 rounded-lg")}
                           <div className={ "bg-" + colorMap[source]["color"] + " w-16 text-center text-white font-bold text-sm py-2 px-3 rounded-lg"}>
                             {source}
                           </div>
                         </td>
-
-                        {/*<td className={className}>*/}
-                        {/*  <Typography className="text-xs font-semibold text-blue-gray-600">*/}
-                        {/*    {date}*/}
-                        {/*  </Typography>*/}
-                        {/*</td>*/}
-                        {/*<td className={className}>*/}
-                        {/*  <Typography*/}
-                        {/*    as="a"*/}
-                        {/*    href="#"*/}
-                        {/*    className="text-xs font-semibold text-blue-gray-600"*/}
-                        {/*  >*/}
-                        {/*    Edit*/}
-                        {/*  </Typography>*/}
-                        {/*</td>*/}
                       </tr>
                     );
                   }
@@ -162,12 +127,6 @@ export function TechTiles() {
       }
     </div>
   );
-
-
-    // <div className="mt-12 mb-8 flex flex-col gap-12">
-    //
-    //
-    // </div>
 }
 
 export default TechTiles;

@@ -3,20 +3,17 @@ import {
   CardHeader,
   CardBody,
   Typography,
-  Avatar,
-  Chip,
   Tooltip,
-  Progress,
   Popover,
   PopoverHandler,
   PopoverContent,
 } from "@material-tailwind/react";
-import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
-import { projectsTableData, xoData } from "@/data";
-import { Translation, useTranslation, Trans } from 'react-i18next';
+import { xoData } from "@/data";
+import { Translation, useTranslation} from 'react-i18next';
 
 
 export function ExecutiveOfficers() {
+  const { t, i18n } = useTranslation();
   const xoData1 = [...xoData].sort((a, b) => (a.tier < b.tier ? -1 : 1));
   const colorMap = {
     "S+" : { color: "bg-red-500", hover: "bg-red-900", text: "bg-red-500"},
@@ -34,7 +31,7 @@ export function ExecutiveOfficers() {
   return (
     <div className="mt-12 mb-8 flex flex-col gap-12">
       <Card className="bg-opacity-60">
-        <CardHeader variant="gradient" color="blue" className="mb-8 p-6">
+        <CardHeader variant="gradient" shadow={false} color="blue" className="mb-2 p-4">
           <Translation>
             {
               (t, { i18n }) => <Typography variant="h6" color="white">
@@ -44,6 +41,9 @@ export function ExecutiveOfficers() {
           </Translation>
         </CardHeader>
         <CardBody className="overflow-x-scroll px-0 pt-0 pb-2 bg-opacity-40">
+          <Typography variant={"small"} className='p-2 text-blue-gray-800'>
+            {t('For mobile phone users, you can scroll and click any icon to see more information.')}
+          </Typography>
           <table className="w-full min-w-[640px] table-auto">
             <thead>
             <tr>
@@ -145,31 +145,6 @@ export function ExecutiveOfficers() {
                             </Popover>
                         }
                       </Translation>
-                      {/*<Popover>*/}
-                      {/*  <PopoverHandler>*/}
-                      {/*    <div className={"scale-100 sm:scale-125 shadow-sm w-15 h-15 p-1 rounded-md ring-2 ring-amber-400 hover:ring-amber-100 dark:ring-amber-500 "+ effectType + " xo-" + id}></div>*/}
-                      {/*  </PopoverHandler>*/}
-                      {/*  <PopoverContent className="w-96">*/}
-
-                      {/*    /!*<div className="align-middle xo-card xo-1"></div>*!/*/}
-                      {/*    */}
-                      {/*    <h5 className="font-bold">Effect Description</h5>*/}
-                      {/*    <div>{effectDesc}</div>*/}
-                      {/*    /!*<div>This is a very beautiful popover, show some love.</div>*!/*/}
-                      {/*    {Object.keys(additionalDesc).length > 0 ?*/}
-                      {/*      Object.keys(additionalDesc).map(*/}
-                      {/*      (descTitle) => (*/}
-                      {/*        <div>*/}
-                      {/*        <h6 className="font-bold text-gray-600">{descTitle}</h6>*/}
-                      {/*        <div className="text-gray-500">{additionalDesc[descTitle]}</div>*/}
-                      {/*        </div>*/}
-                      {/*      )) : ""*/}
-                      {/*    }*/}
-
-                      {/*  </PopoverContent>*/}
-                      {/*</Popover>*/}
-
-
                     </td>
                     <td className={className + " pr-2 sm:pr-0"}>
                       <Translation>

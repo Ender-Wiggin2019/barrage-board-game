@@ -107,7 +107,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
             ))}
 
             <div className="w-auto pt-5">
-              <Select label="Select Language" onChange={handleChange}>
+              <Select label="Select Language" value={i18n.language} onChange={handleChange}>
                 <Option value="en">English</Option>
                 <Option value="zh">中文</Option>
               </Select>
