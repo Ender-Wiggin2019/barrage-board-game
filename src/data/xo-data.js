@@ -286,6 +286,23 @@ export const xoData = [
     tierComment: "No description yet.",
     source: "LWT",
   },
+  {
+    id: "18",
+    name: "Angelo Alberti",
+    startMachine: { money: 6, brownMachine: 6, whiteMachine: 4 },
+    effectType: "xo-desc-2",
+    avatarDesc: {},
+    effectDesc:
+      "Angelo Ablerti can be used only with The Geological Factor expansion. He can avoid the extra or replacement costs illustrated on the left part of the Geological tiles at the cost of 1 Engineer. This is a fast action and can be used twice per round. ",
+    additionalDesc: {
+      Sekibo:
+        "You can take the Angelo Ablerti special action by placing one of your Engineers in the Bank space and resolving the special action (you don't get ang Credit from the Bank)",
+    },
+    tier: 10,
+    tierDesc: "NA",
+    tierComment: "No description yet.",
+    source: "Promo",
+  },
 ];
 
 export default xoData;

@@ -62,6 +62,7 @@ i18n
           "Tommaso Battista": "小黄人",
           "Dr. Octavius": "章鱼哥",
           "Simone Luciani": "订单哥",
+          "Angelo Alberti": "安戈洛·阿尔伯特",
 
           "Effect Description": "技能描述",
           Sekibo: "如果复制姐在场",
@@ -129,7 +130,10 @@ i18n
             "你坝基的建筑费用始终是3个挖掘机。无论你在地图的哪个区域建造。你坝身的建造费用依旧取决于地图的区域，参照基本规则。",
           "If you are playing with German and your special ability is active, in both production action you can produce at least 4 Energy Unit":
             "如果你触发了德国的发电站能力，那么两次发电你最少都可以生产4点能源单位。",
-
+          "Angelo Ablerti can be used only with The Geological Factor expansion. He can avoid the extra or replacement costs illustrated on the left part of the Geological tiles at the cost of 1 Engineer. This is a fast action and can be used twice per round. ":
+            "安戈洛·阿尔伯特必须与 Geological Factor 扩展一同游戏。作为快速行动，你可以放置一个工人到该卡牌上，并忽略地理板块的额外放置花费。",
+          "You can take the Angelo Ablerti special action by placing one of your Engineers in the Bank space and resolving the special action (you don't get ang Credit from the Bank)" :
+            "如果玛希利·斯科波在她回合内复制了该能力，她需要额外放置一个工程师在银行，并立刻触发安戈洛·阿尔伯特的能力。",
           "G.O.A.T": "目前最强执行官",
           "Good choice to solve water shortage": "可以有效解决缺水问题",
           "Start with only 8 Machines is a huge limitation. Need some special startup strategies to achieve his flexibility.":
