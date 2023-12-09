@@ -10,9 +10,25 @@ import {
 } from "@material-tailwind/react";
 import { xoData } from "@/data";
 import { Translation, useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 export function ExecutiveOfficers() {
   const { t, i18n } = useTranslation();
+  const [isScreenSmallerThanMd, setIsScreenSmallerThanMd] = useState(false);
+
+  useEffect(() => {
+    const mdMediaQuery = window.matchMedia('(max-width: 768px)');
+    const handleScreenSizeChange = (e) => {
+      setIsScreenSmallerThanMd(e.matches);
+    };
+    mdMediaQuery.addEventListener('change', handleScreenSizeChange);
+    // 初始化时检查一次屏幕尺寸
+    setIsScreenSmallerThanMd(mdMediaQuery.matches);
+    return () => {
+      mdMediaQuery.removeEventListener('change', handleScreenSizeChange);
+    };
+  }, []);
+
   const xoData1 = [...xoData].sort((a, b) => (a.tier < b.tier ? -1 : 1));
   const colorMap = {
     "S+": { color: "bg-red-500", hover: "bg-red-900", text: "bg-red-500" },
@@ -61,11 +77,12 @@ export function ExecutiveOfficers() {
           </Translation>
         </CardHeader>
         <CardBody className="overflow-x-scroll bg-opacity-40 px-0 pt-0 pb-2">
-          <Typography variant={"small"} className="p-2 text-blue-gray-800">
+          {isScreenSmallerThanMd && (<Typography variant={"h6"} className="px-6 text-blue-gray-700 text-md">
             {t(
               "For mobile phone users, you can scroll and click any icon to see more information.",
             )}
-          </Typography>
+          </Typography>)
+          }
           <table className="w-full min-w-[640px] table-auto">
             <thead>
               <tr>
