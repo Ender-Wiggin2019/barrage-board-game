@@ -49,7 +49,7 @@ export const routes = [
       {
         icon: <PlusCircleIcon {...icon} />,
         name: "Creator",
-        path: "/creaor",
+        path: "/creator",
         element: <CreateInterface />,
       },
     ],
